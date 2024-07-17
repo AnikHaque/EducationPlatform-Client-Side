@@ -68,6 +68,12 @@ const About = () => {
                         </p>
                       </div>
                     </div>
+                    <div>
+                      <button className="btn btn-active bg-[#395bdf] text-white pl-5 mt-4">
+                        Explore More
+                        <i className="fa-solid fa-arrow-right-long mt-1 pl-1"></i>
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
