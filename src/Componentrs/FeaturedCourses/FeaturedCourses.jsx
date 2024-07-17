@@ -22,9 +22,13 @@ const FeaturedCourses = () => {
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi,
               culpa.
             </p>
-            <div className="card-actions justify-end">
+            <div className="card-actions justify-start">
               <button className="btn btn-primary text-white">
                 See More Details{" "}
+                <i className="fa-solid fa-arrow-right-long"></i>
+              </button>
+              <button className="btn btn-primary text-white">
+                10000 Taka Bdt
                 <i className="fa-solid fa-arrow-right-long"></i>
               </button>
             </div>
@@ -47,9 +51,13 @@ const FeaturedCourses = () => {
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque,
               illum?
             </p>
-            <div className="card-actions justify-end">
+            <div className="card-actions justify-start">
               <button className="btn btn-primary text-white">
                 See More Details{" "}
+                <i className="fa-solid fa-arrow-right-long"></i>
+              </button>
+              <button className="btn btn-primary text-white">
+                10000 Taka Bdt
                 <i className="fa-solid fa-arrow-right-long"></i>
               </button>
             </div>
@@ -74,9 +82,13 @@ const FeaturedCourses = () => {
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis,
               autem.
             </p>
-            <div className="card-actions justify-end">
+            <div className="card-actions justify-start">
               <button className="btn btn-primary text-white">
                 See More Details{" "}
+                <i className="fa-solid fa-arrow-right-long"></i>
+              </button>
+              <button className="btn btn-primary text-white">
+                10000 Taka Bdt
                 <i className="fa-solid fa-arrow-right-long"></i>
               </button>
             </div>

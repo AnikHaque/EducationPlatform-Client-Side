@@ -1,7 +1,7 @@
 const Navbar = () => {
   return (
     <div>
-      <div className="navbar bg-[#ffffff]">
+      <div className="navbar bg-[#ffffff] lg:py-4">
         <div className="navbar-start flex justify-center">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

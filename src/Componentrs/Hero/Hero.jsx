@@ -1,7 +1,7 @@
 const Hero = () => {
   return (
     <div className="bg-[#f4f7ff]">
-      <div className=" py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+      <div className=" py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-32">
         <div className="grid gap-10 lg:grid-cols-2">
           <div
             data-aos="fade-right"
@@ -13,10 +13,13 @@ const Hero = () => {
               </h1>
             </div>
             <div className="max-w-xl mb-6">
-              <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none lg:text-5xl">
-                Best Online <span className="text-[#395bdf]">Courses &</span>
-                <br className="hidden md:block" />
-                <span className="text-[#395bdf]">Upgrade</span> Your Skills
+              <h2
+                className="max-w-lg  mb-6 font-sans text-3xl font-bold  text-gray-900 sm:text-4xl sm:leading-none lg:text-6xl 
+"
+              >
+                Grow <span className="text-[#395bdf]">Your Skills</span>
+                <br></br>
+                With our <span className="text-[#395bdf]">Training</span>
               </h2>
               <p className="text-base text-gray-700 md:text-lg">
                 Choose from 85,000 online video courses additions published

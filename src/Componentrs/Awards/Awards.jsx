@@ -1,78 +1,133 @@
 const Awards = () => {
   return (
-    <div className="bg-black text-white ">
-      <div className="py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
-        <div className="grid gap-5 row-gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          <div className="text-center sm:px-0">
-            <div className="flex items-center justify-center w-10 h-10 mx-auto mb-4 rounded-full  sm:w-12 sm:h-12">
-              <i class="fa-solid fa-user text-white text-5xl font-extrabold"></i>
-            </div>
-            <h6 className="mb-2 text-4xl text-center font-extrabold uppercase">
-              15 , 256 +
-            </h6>
-            <div className="mb-2 text-gray-700 font-bold text-xl text-white">
-              HAPPY STUDENT
-            </div>
+    <div className="">
+      <section class="py-10 bg-gray-100 sm:py-16 lg:py-24">
+        <div class="px-4 mx-auto max-w-7xl sm:px-6 ">
+          <div class="text-center">
+            <h4 class="text-5xl font-bold text-gray-900">
+              Numbers tell Our hard works
+            </h4>
           </div>
-          <div className="px-12 text-center sm:px-0">
-            <div className="flex items-center justify-center w-10 h-10 mx-auto mb-4 rounded-full sm:w-12 sm:h-12">
-              <i class="fa-solid fa-star text-white text-5xl font-extrabold"></i>
+
+          <div class="grid grid-cols-1 gap-6 px-6 mt-8 sm:px-0 lg:mt-16 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-12">
+            <div class="overflow-hidden bg-white border border-gray-200 rounded-lg">
+              <div class="px-4 py-6">
+                <div class="flex items-start">
+                  <svg
+                    class="flex-shrink-0 w-12 h-12 text-fuchsia-600"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1"
+                      d="M13 10V3L4 14h7v7l9-11h-7z"
+                    />
+                  </svg>
+                  <div class="ml-4">
+                    <h4 class="text-6xl font-bold text-gray-900 text-center">
+                      8+
+                    </h4>
+                    <p class="mt-1.5 text-xl font-medium leading-tight text-gray-500">
+                      Years in business
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
-            <h6 className="mb-2 text-4xl text-center font-extrabold  uppercase">
-              5, 065 +
-            </h6>
-            <div className="mb-2 text-gray-700 font-bold text-xl text-white">
-              HAPPY STUDENT
+
+            <div class="overflow-hidden bg-white border border-gray-200 rounded-lg">
+              <div class="px-4 py-6">
+                <div class="flex items-start">
+                  <svg
+                    class="flex-shrink-0 w-12 h-12 text-fuchsia-600"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1"
+                      d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"
+                    />
+                  </svg>
+                  <div class="ml-4">
+                    <h4 class="text-6xl font-bold text-gray-900 text-center">
+                      30+
+                    </h4>
+                    <p class="mt-1.5 text-xl font-medium leading-tight text-gray-500">
+                      Team members
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
-          <div className="px-12 text-center sm:px-0">
-            <div className="flex items-center justify-center w-10 h-10 mx-auto mb-4 rounded-full bg-indigo-50 sm:w-12 sm:h-12">
-              <svg
-                className="w-8 h-8 text-deep-purple-accent-400 sm:w-10 sm:h-10"
-                stroke="currentColor"
-                viewBox="0 0 52 52"
-              >
-                <polygon
-                  strokeWidth="3"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  fill="none"
-                  points="29 13 14 29 25 29 23 39 38 23 27 23"
-                />
-              </svg>
+
+            <div class="overflow-hidden bg-white border border-gray-200 rounded-lg">
+              <div class="px-4 py-6">
+                <div class="flex items-start">
+                  <svg
+                    class="flex-shrink-0 w-12 h-12 text-fuchsia-600"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1"
+                      d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                    />
+                  </svg>
+                  <div class="ml-4">
+                    <h4 class="text-6xl font-bold text-gray-900 text-center">
+                      3.7k+
+                    </h4>
+                    <p class="mt-1.5 text-xl font-medium leading-tight text-gray-500">
+                      Students Teached
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
-            <h6 className="mb-2 text-4xl text-center font-bold  uppercase">
-              15 , 256 +
-            </h6>
-            <div className="mb-2 text-gray-700 font-medium text-xl text-white">
-              HAPPY STUDENT
-            </div>
-          </div>
-          <div className="px-12 text-center sm:px-0">
-            <div className="flex items-center justify-center w-10 h-10 mx-auto mb-4 rounded-full bg-indigo-50 sm:w-12 sm:h-12">
-              <svg
-                className="w-8 h-8 text-deep-purple-accent-400 sm:w-10 sm:h-10"
-                stroke="currentColor"
-                viewBox="0 0 52 52"
-              >
-                <polygon
-                  strokeWidth="3"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  fill="none"
-                  points="29 13 14 29 25 29 23 39 38 23 27 23"
-                />
-              </svg>
-            </div>
-            <h6 className="mb-2 text-4xl text-center font-bold  uppercase">
-              15 , 256 +
-            </h6>
-            <div className="mb-2 text-gray-700 font-medium text-xl text-white">
-              HAPPY STUDENT
+
+            <div class="overflow-hidden bg-white border border-gray-200 rounded-lg">
+              <div class="px-4 py-6">
+                <div class="flex items-start">
+                  <svg
+                    class="flex-shrink-0 w-12 h-12 text-fuchsia-600"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1"
+                      d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"
+                    />
+                  </svg>
+                  <div class="ml-4">
+                    <h4 class="text-6xl font-bold text-gray-900 text-center">
+                      98%
+                    </h4>
+                    <p class="mt-1.5 text-xl font-medium leading-tight text-gray-500">
+                      Students success
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 };
