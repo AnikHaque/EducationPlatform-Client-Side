@@ -64,12 +64,15 @@ const Navbar = () => {
             <li>
               <details>
                 <summary>Pages</summary>
-                <ul className="p-2">
+                <ul className="p-2 min-w-40">
                   <li>
-                    <a>Submenu 1</a>
+                    <a>Our Events </a>
                   </li>
                   <li>
-                    <a>Submenu 2</a>
+                    <a>Gallary</a>
+                  </li>
+                  <li>
+                    <a>Success Story</a>
                   </li>
                 </ul>
               </details>
