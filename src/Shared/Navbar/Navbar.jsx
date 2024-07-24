@@ -1,3 +1,6 @@
+// Router Import
+import { Link } from "react-router-dom";
+
 const Navbar = () => {
   return (
     <div>
@@ -25,73 +28,73 @@ const Navbar = () => {
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
             >
               <li>
-                <a>Item 1</a>
+                <Link>Item 1</Link>
               </li>
               <li>
-                <a>Parent</a>
+                <Link>Parent</Link>
                 <ul className="p-2">
                   <li>
-                    <a>Submenu 1</a>
+                    <Link>Submenu 1</Link>
                   </li>
                   <li>
-                    <a>Submenu 2</a>
+                    <Link>Submenu 2</Link>
                   </li>
                 </ul>
               </li>
               <li>
-                <a>Item 3</a>
+                <Link>Item 3</Link>
               </li>
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">
+          <Link className="btn btn-ghost text-xl">
             <img
               className="max-w-32"
               src="https://www.codeinnovior.com/assets/images/Logo-6-inch%20(1).png"
             ></img>
-          </a>
+          </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
             <li>
-              <a className="">Home</a>
+              <Link className="">Home</Link>
             </li>
             <li>
-              <a>About</a>
+              <Link to="/about">About</Link>
             </li>
             <li>
-              <a>Courses</a>
+              <Link>Courses</Link>
             </li>
             <li>
               <details>
                 <summary>Pages</summary>
                 <ul className="p-2 min-w-40">
                   <li>
-                    <a>Our Events </a>
+                    <Link>Our Events </Link>
                   </li>
                   <li>
-                    <a>Gallary</a>
+                    <Link>Gallary</Link>
                   </li>
                   <li>
-                    <a>Success Story</a>
+                    <Link>Success Story</Link>
                   </li>
                 </ul>
               </details>
             </li>
             <li>
-              <a>Blog</a>
+              <Link>Blog</Link>
             </li>
             <li>
-              <a>Contact</a>
+              <Link>Contact</Link>
             </li>
           </ul>
         </div>
         <div className="navbar-end">
-          <a className="btn bg-[#395bdf] text-white me-1">
+          <Link className="btn bg-[#395bdf] text-white me-1">
             Login/Signup <i className="fa-solid fa-right-to-bracket"></i>
-          </a>
-          <a className="btn bg-black text-white">
+          </Link>
+          <Link className="btn bg-black text-white">
             <i className="fa-solid fa-child"></i> Kids Program
-          </a>
+          </Link>
         </div>
       </div>
     </div>

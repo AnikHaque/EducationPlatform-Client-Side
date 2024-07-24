@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import AOS from "aos";
-import "aos/dist/aos.css"; // You can also use <link> for styles
+import "aos/dist/aos.css";
 import { RouterProvider } from "react-router-dom";
 import router from "./Routes/Router.jsx";
 // ..
@@ -22,7 +22,7 @@ AOS.init({
   duration: 1400,
   easing: "ease",
   once: false,
-  mirror: true, // Allows animations to trigger again when scrolling past the element
+  mirror: true,
   anchorPlacement: "top-bottom",
 });
 

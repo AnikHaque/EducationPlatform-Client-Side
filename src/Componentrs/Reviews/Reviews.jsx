@@ -1,36 +1,36 @@
 const Reviews = () => {
   return (
     <div className="bg-[#f4f7ff] pt-20 pb-20">
-      <section class="container mx-auto">
-        <div class="">
-          <div class="max-w-2xl mx-auto text-center">
-            <h2 class="text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl">
+      <section className="container mx-auto">
+        <div className="">
+          <div className="max-w-2xl mx-auto text-center">
+            <h2 className="text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl">
               What our customers say
             </h2>
-            <p class="max-w-lg mx-auto mt-4 text-base leading-relaxed text-gray-600">
+            <p className="max-w-lg mx-auto mt-4 text-base leading-relaxed text-gray-600">
               Amet minim mollit non deserunt ullamco est sit aliqua dolor do
               amet sint. Velit officia consequat duis.
             </p>
           </div>
 
-          <div class="grid grid-cols-1 gap-6 px-4 mt-12 sm:px-0 xl:mt-20 xl:grid-cols-4 sm:grid-cols-2">
-            <div class="overflow-hidden bg-white rounded-md">
-              <div class="px-5 py-6">
-                <div class="flex items-center justify-between">
+          <div className="grid grid-cols-1 gap-6 px-4 mt-12 sm:px-0 xl:mt-20 xl:grid-cols-4 sm:grid-cols-2">
+            <div className="overflow-hidden bg-white rounded-md">
+              <div className="px-5 py-6">
+                <div className="flex items-center justify-between">
                   <img
-                    class="flex-shrink-0 object-cover w-10 h-10 rounded-full"
+                    className="flex-shrink-0 object-cover w-10 h-10 rounded-full"
                     src="https://cdn.rareblocks.xyz/collection/celebration/images/testimonials/7/avatar-1.jpg"
                     alt=""
                   />
-                  <div class="min-w-0 ml-3 mr-auto">
-                    <p class="text-base font-semibold text-black truncate">
+                  <div className="min-w-0 ml-3 mr-auto">
+                    <p className="text-base font-semibold text-black truncate">
                       Darrell Steward
                     </p>
-                    <p class="text-sm text-gray-600 truncate">@darrels</p>
+                    <p className="text-sm text-gray-600 truncate">@darrels</p>
                   </div>
-                  <a href="#" title="" class="inline-block text-sky-500">
+                  <a href="#" title="" className="inline-block text-sky-500">
                     <svg
-                      class="w-6 h-6"
+                      className="w-6 h-6"
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"
                       fill="currentColor"
@@ -39,34 +39,34 @@ const Reviews = () => {
                     </svg>
                   </a>
                 </div>
-                <blockquote class="mt-5">
-                  <p class="text-base text-gray-800">
+                <blockquote className="mt-5">
+                  <p className="text-base text-gray-800">
                     You made it so simple. My new site is so much faster and
                     easier to work with than my old site. I just choose the
                     page, make the change and click save.
-                    <span class="block text-sky-500">#another</span>
+                    <span className="block text-sky-500">#another</span>
                   </p>
                 </blockquote>
               </div>
             </div>
 
-            <div class="overflow-hidden bg-white rounded-md">
-              <div class="px-5 py-6">
-                <div class="flex items-center justify-between">
+            <div className="overflow-hidden bg-white rounded-md">
+              <div className="px-5 py-6">
+                <div className="flex items-center justify-between">
                   <img
-                    class="flex-shrink-0 object-cover w-10 h-10 rounded-full"
+                    className="flex-shrink-0 object-cover w-10 h-10 rounded-full"
                     src="https://cdn.rareblocks.xyz/collection/celebration/images/testimonials/7/avatar-2.jpg"
                     alt=""
                   />
-                  <div class="min-w-0 ml-3 mr-auto">
-                    <p class="text-base font-semibold text-black truncate">
+                  <div className="min-w-0 ml-3 mr-auto">
+                    <p className="text-base font-semibold text-black truncate">
                       Leslie Alexander
                     </p>
-                    <p class="text-sm text-gray-600 truncate">@lesslie</p>
+                    <p className="text-sm text-gray-600 truncate">@lesslie</p>
                   </div>
-                  <a href="#" title="" class="inline-block text-sky-500">
+                  <a href="#" title="" className="inline-block text-sky-500">
                     <svg
-                      class="w-6 h-6"
+                      className="w-6 h-6"
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"
                       fill="currentColor"
@@ -75,33 +75,35 @@ const Reviews = () => {
                     </svg>
                   </a>
                 </div>
-                <blockquote class="mt-5">
-                  <p class="text-base text-gray-800">
+                <blockquote className="mt-5">
+                  <p className="text-base text-gray-800">
                     Simply the best. Better than all the rest. I’d recommend
                     this product to beginners and advanced users.
-                    <span class="block text-sky-500">#Celebration</span>
+                    <span className="block text-sky-500">#Celebration</span>
                   </p>
                 </blockquote>
               </div>
             </div>
 
-            <div class="overflow-hidden bg-white rounded-md">
-              <div class="px-5 py-6">
-                <div class="flex items-center justify-between">
+            <div className="overflow-hidden bg-white rounded-md">
+              <div className="px-5 py-6">
+                <div className="flex items-center justify-between">
                   <img
-                    class="flex-shrink-0 object-cover w-10 h-10 rounded-full"
+                    className="flex-shrink-0 object-cover w-10 h-10 rounded-full"
                     src="https://cdn.rareblocks.xyz/collection/celebration/images/testimonials/7/avatar-3.jpg"
                     alt=""
                   />
-                  <div class="min-w-0 ml-3 mr-auto">
-                    <p class="text-base font-semibold text-black truncate">
+                  <div className="min-w-0 ml-3 mr-auto">
+                    <p className="text-base font-semibold text-black truncate">
                       Jenny Wilson
                     </p>
-                    <p class="text-sm text-gray-600 truncate">@jennywilson</p>
+                    <p className="text-sm text-gray-600 truncate">
+                      @jennywilson
+                    </p>
                   </div>
-                  <a href="#" title="" class="inline-block text-sky-500">
+                  <a href="#" title="" className="inline-block text-sky-500">
                     <svg
-                      class="w-6 h-6"
+                      className="w-6 h-6"
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"
                       fill="currentColor"
@@ -110,35 +112,35 @@ const Reviews = () => {
                     </svg>
                   </a>
                 </div>
-                <blockquote class="mt-5">
-                  <p class="text-base text-gray-800">
+                <blockquote className="mt-5">
+                  <p className="text-base text-gray-800">
                     This is a top quality product. No need to think twice before
                     making it live on web.
-                    <span class="block text-sky-500">#make_it_fast</span>
+                    <span className="block text-sky-500">#make_it_fast</span>
                   </p>
                 </blockquote>
               </div>
             </div>
 
-            <div class="overflow-hidden bg-white rounded-md">
-              <div class="px-5 py-6">
-                <div class="flex items-center justify-between">
+            <div className="overflow-hidden bg-white rounded-md">
+              <div className="px-5 py-6">
+                <div className="flex items-center justify-between">
                   <img
-                    class="flex-shrink-0 object-cover w-10 h-10 rounded-full"
+                    className="flex-shrink-0 object-cover w-10 h-10 rounded-full"
                     src="https://cdn.rareblocks.xyz/collection/celebration/images/testimonials/7/avatar-4.jpg"
                     alt=""
                   />
-                  <div class="min-w-0 ml-3 mr-auto">
-                    <p class="text-base font-semibold text-black truncate">
+                  <div className="min-w-0 ml-3 mr-auto">
+                    <p className="text-base font-semibold text-black truncate">
                       Kristin Watson
                     </p>
-                    <p class="text-sm text-gray-600 truncate">
+                    <p className="text-sm text-gray-600 truncate">
                       @kristinwatson2
                     </p>
                   </div>
-                  <a href="#" title="" class="inline-block text-sky-500">
+                  <a href="#" title="" className="inline-block text-sky-500">
                     <svg
-                      class="w-6 h-6"
+                      className="w-6 h-6"
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"
                       fill="currentColor"
@@ -147,34 +149,36 @@ const Reviews = () => {
                     </svg>
                   </a>
                 </div>
-                <blockquote class="mt-5">
-                  <p class="text-base text-gray-800">
+                <blockquote className="mt-5">
+                  <p className="text-base text-gray-800">
                     YFinally, I’ve found a template that covers all bases for a
                     bootstrapped startup. We were able to launch in days, not
                     months.
-                    <span class="block text-sky-500">#Celebration</span>
+                    <span className="block text-sky-500">#Celebration</span>
                   </p>
                 </blockquote>
               </div>
             </div>
 
-            <div class="overflow-hidden bg-white rounded-md">
-              <div class="px-5 py-6">
-                <div class="flex items-center justify-between">
+            <div className="overflow-hidden bg-white rounded-md">
+              <div className="px-5 py-6">
+                <div className="flex items-center justify-between">
                   <img
-                    class="flex-shrink-0 object-cover w-10 h-10 rounded-full"
+                    className="flex-shrink-0 object-cover w-10 h-10 rounded-full"
                     src="https://cdn.rareblocks.xyz/collection/celebration/images/testimonials/7/avatar-5.jpg"
                     alt=""
                   />
-                  <div class="min-w-0 ml-3 mr-auto">
-                    <p class="text-base font-semibold text-black truncate">
+                  <div className="min-w-0 ml-3 mr-auto">
+                    <p className="text-base font-semibold text-black truncate">
                       Guy Hawkins
                     </p>
-                    <p class="text-sm text-gray-600 truncate">@jennywilson</p>
+                    <p className="text-sm text-gray-600 truncate">
+                      @jennywilson
+                    </p>
                   </div>
-                  <a href="#" title="" class="inline-block text-sky-500">
+                  <a href="#" title="" className="inline-block text-sky-500">
                     <svg
-                      class="w-6 h-6"
+                      className="w-6 h-6"
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"
                       fill="currentColor"
@@ -183,33 +187,33 @@ const Reviews = () => {
                     </svg>
                   </a>
                 </div>
-                <blockquote class="mt-5">
-                  <p class="text-base text-gray-800">
+                <blockquote className="mt-5">
+                  <p className="text-base text-gray-800">
                     This is a top quality product. No need to think twice before
                     making it live on web.
-                    <span class="block text-sky-500">#make_it_fast</span>
+                    <span className="block text-sky-500">#make_it_fast</span>
                   </p>
                 </blockquote>
               </div>
             </div>
 
-            <div class="overflow-hidden bg-white rounded-md">
-              <div class="px-5 py-6">
-                <div class="flex items-center justify-between">
+            <div className="overflow-hidden bg-white rounded-md">
+              <div className="px-5 py-6">
+                <div className="flex items-center justify-between">
                   <img
-                    class="flex-shrink-0 object-cover w-10 h-10 rounded-full"
+                    className="flex-shrink-0 object-cover w-10 h-10 rounded-full"
                     src="https://cdn.rareblocks.xyz/collection/celebration/images/testimonials/7/avatar-6.jpg"
                     alt=""
                   />
-                  <div class="min-w-0 ml-3 mr-auto">
-                    <p class="text-base font-semibold text-black truncate">
+                  <div className="min-w-0 ml-3 mr-auto">
+                    <p className="text-base font-semibold text-black truncate">
                       Marvin McKinney
                     </p>
-                    <p class="text-sm text-gray-600 truncate">@darrels</p>
+                    <p className="text-sm text-gray-600 truncate">@darrels</p>
                   </div>
-                  <a href="#" title="" class="inline-block text-sky-500">
+                  <a href="#" title="" className="inline-block text-sky-500">
                     <svg
-                      class="w-6 h-6"
+                      className="w-6 h-6"
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"
                       fill="currentColor"
@@ -218,34 +222,34 @@ const Reviews = () => {
                     </svg>
                   </a>
                 </div>
-                <blockquote class="mt-5">
-                  <p class="text-base text-gray-800">
+                <blockquote className="mt-5">
+                  <p className="text-base text-gray-800">
                     With Celebration, it’s quicker with the customer, the
                     customer is more ensured of getting exactly what they
                     ordered, and I’m all for the efficiency.
-                    <span class="block text-sky-500">#dev #tools</span>
+                    <span className="block text-sky-500">#dev #tools</span>
                   </p>
                 </blockquote>
               </div>
             </div>
 
-            <div class="overflow-hidden bg-white rounded-md">
-              <div class="px-5 py-6">
-                <div class="flex items-center justify-between">
+            <div className="overflow-hidden bg-white rounded-md">
+              <div className="px-5 py-6">
+                <div className="flex items-center justify-between">
                   <img
-                    class="flex-shrink-0 object-cover w-10 h-10 rounded-full"
+                    className="flex-shrink-0 object-cover w-10 h-10 rounded-full"
                     src="https://cdn.rareblocks.xyz/collection/celebration/images/testimonials/7/avatar-7.jpg"
                     alt=""
                   />
-                  <div class="min-w-0 ml-3 mr-auto">
-                    <p class="text-base font-semibold text-black truncate">
+                  <div className="min-w-0 ml-3 mr-auto">
+                    <p className="text-base font-semibold text-black truncate">
                       Annette Black
                     </p>
-                    <p class="text-sm text-gray-600 truncate">@darrels</p>
+                    <p className="text-sm text-gray-600 truncate">@darrels</p>
                   </div>
-                  <a href="#" title="" class="inline-block text-sky-500">
+                  <a href="#" title="" className="inline-block text-sky-500">
                     <svg
-                      class="w-6 h-6"
+                      className="w-6 h-6"
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"
                       fill="currentColor"
@@ -254,34 +258,34 @@ const Reviews = () => {
                     </svg>
                   </a>
                 </div>
-                <blockquote class="mt-5">
-                  <p class="text-base text-gray-800">
+                <blockquote className="mt-5">
+                  <p className="text-base text-gray-800">
                     You made it so simple. My new site is so much faster and
                     easier to work with than my old site. I just choose the
                     page, make the change and click save.
-                    <span class="block text-sky-500">#another</span>
+                    <span className="block text-sky-500">#another</span>
                   </p>
                 </blockquote>
               </div>
             </div>
 
-            <div class="overflow-hidden bg-white rounded-md">
-              <div class="px-5 py-6">
-                <div class="flex items-center justify-between">
+            <div className="overflow-hidden bg-white rounded-md">
+              <div className="px-5 py-6">
+                <div className="flex items-center justify-between">
                   <img
-                    class="flex-shrink-0 object-cover w-10 h-10 rounded-full"
+                    className="flex-shrink-0 object-cover w-10 h-10 rounded-full"
                     src="https://cdn.rareblocks.xyz/collection/celebration/images/testimonials/7/avatar-8.jpg"
                     alt=""
                   />
-                  <div class="min-w-0 ml-3 mr-auto">
-                    <p class="text-base font-semibold text-black truncate">
+                  <div className="min-w-0 ml-3 mr-auto">
+                    <p className="text-base font-semibold text-black truncate">
                       Floyd Miles
                     </p>
-                    <p class="text-sm text-gray-600 truncate">@darrels</p>
+                    <p className="text-sm text-gray-600 truncate">@darrels</p>
                   </div>
-                  <a href="#" title="" class="inline-block text-sky-500">
+                  <a href="#" title="" className="inline-block text-sky-500">
                     <svg
-                      class="w-6 h-6"
+                      className="w-6 h-6"
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"
                       fill="currentColor"
@@ -290,12 +294,12 @@ const Reviews = () => {
                     </svg>
                   </a>
                 </div>
-                <blockquote class="mt-5">
-                  <p class="text-base text-gray-800">
+                <blockquote className="mt-5">
+                  <p className="text-base text-gray-800">
                     My new site is so much faster and easier to work with than
                     my old site. I just choose the page, make the change and
                     click save.
-                    <span class="block text-sky-500">#Celebration</span>
+                    <span className="block text-sky-500">#Celebration</span>
                   </p>
                 </blockquote>
               </div>

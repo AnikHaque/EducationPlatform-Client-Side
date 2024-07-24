@@ -1,9 +1,10 @@
+import { Link } from "react-router-dom";
+
 const FeaturedCourses = () => {
   return (
     <div className="py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
-      <h1 className="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none lg:text-5xl">
-        Our Featured{" "}
-        <span className="text-[#395bdf] font-extrabold">Courses</span>
+      <h1 className="max-w-lg mb-14 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none lg:text-5xl">
+        Our Featured <span className="text-[#395bdf] font-bold">Courses</span>
       </h1>
       <div className="grid grid-cols-3 gap-4">
         <div
@@ -23,10 +24,13 @@ const FeaturedCourses = () => {
               culpa.
             </p>
             <div className="card-actions justify-start">
-              <button className="btn btn-primary text-white">
-                See More Details{" "}
-                <i className="fa-solid fa-arrow-right-long"></i>
-              </button>
+              <Link to="/full-stack-development">
+                <button className="btn btn-primary text-white">
+                  See More Details{" "}
+                  <i className="fa-solid fa-arrow-right-long"></i>
+                </button>
+              </Link>
+
               <button className="btn btn-primary text-white">
                 10000 Taka Bdt
                 <i className="fa-solid fa-arrow-right-long"></i>

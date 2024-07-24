@@ -1,6 +1,7 @@
-import About from "../../Componentrs/About/About";
+// Components Import
+import HomeAbout from "../../Componentrs/About/HomeAbout";
 import Awards from "../../Componentrs/Awards/Awards";
-import Blogs from "../../Componentrs/Blogs/Blogs";
+import HomeBlog from "../../Componentrs/Blogs/HomeBlog";
 import Career from "../../Componentrs/Career/Career";
 import FeaturedCourses from "../../Componentrs/FeaturedCourses/FeaturedCourses";
 import Hero from "../../Componentrs/Hero/Hero";
@@ -11,13 +12,13 @@ const Homepage = () => {
   return (
     <div>
       <Hero></Hero>
-      <About></About>
+      <HomeAbout></HomeAbout>
       <Awards></Awards>
       <FeaturedCourses></FeaturedCourses>
       <Career></Career>
       <Teams></Teams>
       <Reviews></Reviews>
-      <Blogs></Blogs>
+      <HomeBlog></HomeBlog>
     </div>
   );
 };
