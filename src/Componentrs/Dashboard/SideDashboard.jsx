@@ -12,7 +12,7 @@ const SideDashboard = () => {
           <ul className="mt-6 space-y-1">
             <li>
               <Link
-                href="#"
+                to="/dashboard/maindashboard"
                 className="block rounded-lg px-4 py-2 text-sm font-medium text-white"
               >
                 Dashboard

@@ -7,7 +7,12 @@ import Homepage from "../Pages/Homepage/Homepage";
 import Aboutpage from "../Pages/Aboutpage/Aboutpage";
 import CourseDetails from "../Componentrs/FeaturedCourses/CourseDetails";
 import DashboardLayout from "../Layouts/DashboardLayout";
-import HomeBlog from "../Componentrs/Blogs/HomeBlog";
+
+import MainDashboard from "../Componentrs/Dashboard/MainDashboard";
+import LoginFirstPage from "../Componentrs/Login/LoginFirstPage";
+import UserLogin from "../Componentrs/Login/User/UserLogin";
+import UserRegistration from "../Componentrs/Login/User/UserRegistration";
+import UserOtp from "../Componentrs/Login/User/UserOtp";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +23,22 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Homepage></Homepage>,
+      },
+      {
+        path: "/login",
+        element: <LoginFirstPage></LoginFirstPage>,
+      },
+      {
+        path: "/user-login",
+        element: <UserLogin></UserLogin>,
+      },
+      {
+        path: "/user-signup",
+        element: <UserRegistration></UserRegistration>,
+      },
+      {
+        path: "/verify-user-otp",
+        element: <UserOtp></UserOtp>,
       },
       {
         path: "/about",
@@ -33,8 +54,8 @@ const router = createBrowserRouter([
         // errorElement: <ErrorPage></ErrorPage>,
         children: [
           {
-            path: "/dashboard/profile",
-            element: <h1>Hello</h1>,
+            path: "/dashboard/maindashboard",
+            element: <MainDashboard></MainDashboard>,
           },
         ],
       },
