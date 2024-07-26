@@ -109,6 +109,15 @@ const SideDashboard = () => {
                   </li>
 
                   <li>
+                    <Link
+                      to="/dashboard/create-course"
+                      className="block rounded-lg px-4 py-2 text-sm font-medium text-white"
+                    >
+                      Create Course
+                    </Link>
+                  </li>
+
+                  <li>
                     <a
                       href="#"
                       className="block rounded-lg px-4 py-2 text-sm font-medium text-white"
