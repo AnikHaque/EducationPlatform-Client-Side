@@ -69,7 +69,7 @@ const AddCourse = () => {
   };
 
   return (
-    <div className=" rounded-md">
+    <div className=" rounded-md w-full">
       <h2 className="text-2xl font-bold mb-4">Add New Course</h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
@@ -84,7 +84,7 @@ const AddCourse = () => {
             id="title"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
-            className="shadow appearance-none border rounded w-[600px] py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             required
           />
         </div>

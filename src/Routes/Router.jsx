@@ -17,6 +17,7 @@ import AddCategory from "../Componentrs/Dashboard/DashboardComponents/Add-Catego
 import CategoryList from "../Componentrs/Dashboard/DashboardComponents/Add-Category/Categories/GetAllCategory";
 import AddCourse from "../Componentrs/Dashboard/DashboardComponents/Courses/CreateCourse";
 import CourseList from "../Componentrs/Dashboard/DashboardComponents/Courses/ShowCourses";
+import EditCourse from "../Componentrs/Dashboard/DashboardComponents/Courses/EditCourse";
 
 const router = createBrowserRouter([
   {
@@ -76,6 +77,10 @@ const router = createBrowserRouter([
           {
             path: "/dashboard/courses",
             element: <CourseList></CourseList>,
+          },
+          {
+            path: "/dashboard/edit-course/:id",
+            element: <EditCourse></EditCourse>,
           },
         ],
       },
