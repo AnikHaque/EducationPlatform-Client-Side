@@ -118,6 +118,15 @@ const SideDashboard = () => {
                   </li>
 
                   <li>
+                    <Link
+                      to="/dashboard/courses"
+                      className="block rounded-lg px-4 py-2 text-sm font-medium text-white"
+                    >
+                      Show Courses
+                    </Link>
+                  </li>
+
+                  <li>
                     <a
                       href="#"
                       className="block rounded-lg px-4 py-2 text-sm font-medium text-white"

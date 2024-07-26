@@ -16,6 +16,7 @@ import UserOtp from "../Componentrs/Login/User/UserOtp";
 import AddCategory from "../Componentrs/Dashboard/DashboardComponents/Add-Category/AddCategory";
 import CategoryList from "../Componentrs/Dashboard/DashboardComponents/Add-Category/Categories/GetAllCategory";
 import AddCourse from "../Componentrs/Dashboard/DashboardComponents/Courses/CreateCourse";
+import CourseList from "../Componentrs/Dashboard/DashboardComponents/Courses/ShowCourses";
 
 const router = createBrowserRouter([
   {
@@ -71,6 +72,10 @@ const router = createBrowserRouter([
           {
             path: "/dashboard/create-course",
             element: <AddCourse></AddCourse>,
+          },
+          {
+            path: "/dashboard/courses",
+            element: <CourseList></CourseList>,
           },
         ],
       },
