@@ -91,12 +91,21 @@ const SideDashboard = () => {
 
                 <ul className="mt-2 space-y-1 px-4">
                   <li>
-                    <a
-                      href="#"
+                    <Link
+                      to="/dashboard/add-category"
                       className="block rounded-lg px-4 py-2 text-sm font-medium text-white"
                     >
-                      Banned Users
-                    </a>
+                      Create Category
+                    </Link>
+                  </li>
+
+                  <li>
+                    <Link
+                      to="/dashboard/show-categories"
+                      className="block rounded-lg px-4 py-2 text-sm font-medium text-white"
+                    >
+                      Show Categories
+                    </Link>
                   </li>
 
                   <li>

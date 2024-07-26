@@ -13,6 +13,8 @@ import LoginFirstPage from "../Componentrs/Login/LoginFirstPage";
 import UserLogin from "../Componentrs/Login/User/UserLogin";
 import UserRegistration from "../Componentrs/Login/User/UserRegistration";
 import UserOtp from "../Componentrs/Login/User/UserOtp";
+import AddCategory from "../Componentrs/Dashboard/DashboardComponents/Add-Category/AddCategory";
+import CategoryList from "../Componentrs/Dashboard/DashboardComponents/Add-Category/Categories/GetAllCategory";
 
 const router = createBrowserRouter([
   {
@@ -56,6 +58,14 @@ const router = createBrowserRouter([
           {
             path: "/dashboard/maindashboard",
             element: <MainDashboard></MainDashboard>,
+          },
+          {
+            path: "/dashboard/add-category",
+            element: <AddCategory></AddCategory>,
+          },
+          {
+            path: "/dashboard/show-categories",
+            element: <CategoryList></CategoryList>,
           },
         ],
       },
