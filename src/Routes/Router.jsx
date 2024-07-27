@@ -19,6 +19,9 @@ import AddCourse from "../Componentrs/Dashboard/DashboardComponents/Courses/Crea
 import CourseList from "../Componentrs/Dashboard/DashboardComponents/Courses/ShowCourses";
 import EditCourse from "../Componentrs/Dashboard/DashboardComponents/Courses/EditCourse";
 import AdminLogin from "../Componentrs/Login/Admin/AdminLogin";
+import AdminRegistration from "../Componentrs/Login/Admin/AdminRegistration";
+import AdminOtp from "../Componentrs/Login/Admin/AdminOtp";
+import AddBlog from "../Componentrs/Dashboard/DashboardComponents/Blogs/CreateBlog";
 
 const router = createBrowserRouter([
   {
@@ -43,8 +46,16 @@ const router = createBrowserRouter([
         element: <UserRegistration></UserRegistration>,
       },
       {
+        path: "/admin-signup",
+        element: <AdminRegistration></AdminRegistration>,
+      },
+      {
         path: "/verify-user-otp",
         element: <UserOtp></UserOtp>,
+      },
+      {
+        path: "/verify-admin-otp",
+        element: <AdminOtp></AdminOtp>,
       },
       {
         path: "/admin-login",
@@ -86,6 +97,10 @@ const router = createBrowserRouter([
           {
             path: "/dashboard/edit-course/:id",
             element: <EditCourse></EditCourse>,
+          },
+          {
+            path: "/dashboard/add-blog",
+            element: <AddBlog></AddBlog>,
           },
         ],
       },

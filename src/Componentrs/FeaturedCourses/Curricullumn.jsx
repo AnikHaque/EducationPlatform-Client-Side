@@ -1,12 +1,12 @@
 const Curricullumn = () => {
   return (
-    <div>
+    <div className="">
       {/* course curricullum */}
       <h1 className="mt-20 font-bold text-4xl text-center mb-10">
         Course Curricullum
       </h1>
-      <div className="bg-[#f4f7ff] mb-10 pt-12 pb-12 ">
-        <div className="container mx-auto">
+      <div className="bg-[#f4f7ff]  pt-12 pb-12  mb-20">
+        <div className="lg:ml-20 mr-20">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-3 mt-4">
             <div className="collapse collapse-plus bg-white mb-2">
               <input type="radio" name="my-accordion-3" />

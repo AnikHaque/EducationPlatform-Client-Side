@@ -1,4 +1,12 @@
+import { decodeToken } from "../../Utility/Token";
+
 const CourseDetailsModule = () => {
+  // Decode token to retrieve user information
+  const userInfo = decodeToken();
+
+  // Extract role from user information
+  const role = userInfo ? userInfo.role : null;
+
   return (
     <div className="py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-10">
       <div className="grid grid-cols-1 lg:grid-cols-2">
@@ -98,7 +106,7 @@ const CourseDetailsModule = () => {
                           />
                         </div>
                         <button className="btn mr-4 bg-blue-600 text-white">
-                          Submit Information
+                          {role}
                         </button>
                         {/* if there is a button in form, it will close the modal */}
                       </form>

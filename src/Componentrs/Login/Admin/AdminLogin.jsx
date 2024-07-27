@@ -131,7 +131,7 @@ const AdminLogin = () => {
               <p className="text-sm text-gray-500">
                 No account ?
                 <Link
-                  to="/user-signup"
+                  to="/admin-signup"
                   className="underline text-blue-400 ml-2"
                   href="#"
                 >
