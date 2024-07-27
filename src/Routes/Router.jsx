@@ -18,6 +18,7 @@ import CategoryList from "../Componentrs/Dashboard/DashboardComponents/Add-Categ
 import AddCourse from "../Componentrs/Dashboard/DashboardComponents/Courses/CreateCourse";
 import CourseList from "../Componentrs/Dashboard/DashboardComponents/Courses/ShowCourses";
 import EditCourse from "../Componentrs/Dashboard/DashboardComponents/Courses/EditCourse";
+import AdminLogin from "../Componentrs/Login/Admin/AdminLogin";
 
 const router = createBrowserRouter([
   {
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
       {
         path: "/verify-user-otp",
         element: <UserOtp></UserOtp>,
+      },
+      {
+        path: "/admin-login",
+        element: <AdminLogin></AdminLogin>,
       },
       {
         path: "/about",

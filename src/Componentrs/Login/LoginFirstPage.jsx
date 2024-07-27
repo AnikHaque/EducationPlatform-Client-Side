@@ -31,9 +31,11 @@ const LoginFirstPage = () => {
             </div>
             <div className="flex flex-col justify-between overflow-hidden  bg-purple-500 rounded group hover:shadow-2xl">
               <div className="p-5">
-                <p className="mb-2 font-bold text-center text-white text-6xl">
-                  ADMIN
-                </p>
+                <Link to="/admin-login">
+                  <p className="mb-2 font-bold text-center text-white text-6xl">
+                    ADMIN
+                  </p>
+                </Link>
               </div>
               <div className="w-full h-1 ml-auto duration-300 origin-left transform scale-x-0 bg-deep-purple-accent-400 group-hover:scale-x-100" />
             </div>
