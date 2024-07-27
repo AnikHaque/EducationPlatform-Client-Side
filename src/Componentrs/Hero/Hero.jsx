@@ -14,7 +14,7 @@ const Hero = () => {
             </div>
             <div className="max-w-xl mb-6">
               <h2
-                className="max-w-lg  mb-6 font-sans text-3xl font-bold  text-gray-900 sm:text-4xl sm:leading-none lg:text-6xl 
+                className="max-w-lg text-justify  mb-6 font-sans text-3xl font-bold  text-gray-900 sm:text-4xl sm:leading-none lg:text-6xl 
 "
               >
                 Grow <span className="text-[#395bdf]">Your Skills</span>
