@@ -2,9 +2,9 @@ import "../../Styles/Kids/KidsBanner.css";
 
 const KidsBanner = () => {
   return (
-    <div>
+    <div className="bg-gradient-to-r from-fuchsia-600 to-blue-600">
       <div class="relative">
-        <section class="bg-yellow-50 overflow-hidden">
+        <section class=" overflow-hidden">
           <div class="flex flex-col lg:flex-row lg:items-stretch lg:min-h-[800px]">
             <div class="relative flex items-center justify-center w-full lg:order-2 lg:w-7/12">
               <div class="absolute bottom-0 right-0 hidden lg:block">
@@ -16,12 +16,12 @@ const KidsBanner = () => {
               </div>
 
               <div class="relative px-4 pt-24 pb-16 text-center sm:px-6 md:px-24 2xl:px-32 lg:py-24 lg:text-left">
-                <h1 class="text-4xl font-bold text-black sm:text-6xl xl:text-7xl">
+                <h1 class="text-4xl font-bold text-white sm:text-6xl xl:text-7xl">
                   Give your child Perfectly
                   <br />
                   the power of coding
                 </h1>
-                <p class="mt-8 text-xl text-black">
+                <p class="mt-8 text-xl text-white">
                   We help you to make your remote work life easier. Build a
                   distruction free working experience.
                 </p>
