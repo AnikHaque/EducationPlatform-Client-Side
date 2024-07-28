@@ -22,6 +22,7 @@ import AdminLogin from "../Componentrs/Login/Admin/AdminLogin";
 import AdminRegistration from "../Componentrs/Login/Admin/AdminRegistration";
 import AdminOtp from "../Componentrs/Login/Admin/AdminOtp";
 import AddBlog from "../Componentrs/Dashboard/DashboardComponents/Blogs/CreateBlog";
+import Kids from "../Componentrs/Kids/Kids";
 
 const router = createBrowserRouter([
   {
@@ -60,6 +61,10 @@ const router = createBrowserRouter([
       {
         path: "/admin-login",
         element: <AdminLogin></AdminLogin>,
+      },
+      {
+        path: "/kids-program",
+        element: <Kids></Kids>,
       },
       {
         path: "/about",
