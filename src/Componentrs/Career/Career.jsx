@@ -1,12 +1,12 @@
 const Career = () => {
   return (
-    <div className="bg-[#f4f7ff]">
+    <div className="bg-gradient-to-r from-fuchsia-600 to-blue-600">
       <div className="py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
-        <p className="text-center text-2xl text-[#f14d5d] font-bold">
+        <p className="text-center text-2xl text-white font-bold">
           Choose Your Career
         </p>
-        <h1 className="text-center text-5xl font-bold">
-          CHOOSE YOUR <span className="text-[#395bdf] font-bold">CAREER</span>
+        <h1 className="text-center text-5xl font-bold text-white">
+          CHOOSE YOUR <span className="text-gray-300 font-bold">CAREER</span>
         </h1>
         <div className="grid grid-cols-2 gap-10 mt-14">
           <div
@@ -29,7 +29,7 @@ const Career = () => {
               </h2>
 
               <div className="card-actions justify-end">
-                <button className="btn btn-primary text-white">
+                <button className="btn btn-primary text-white font-extrabold">
                   Join Now <i className="fa-solid fa-arrow-right-long"></i>
                 </button>
               </div>
@@ -56,7 +56,7 @@ const Career = () => {
               </h2>
 
               <div className="card-actions justify-end">
-                <button className="btn btn-primary text-white">
+                <button className="btn btn-primary text-white font-extrabold">
                   Join Now <i className="fa-solid fa-arrow-right-long"></i>
                 </button>
               </div>
