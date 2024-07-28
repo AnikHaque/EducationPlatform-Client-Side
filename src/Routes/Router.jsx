@@ -22,6 +22,7 @@ import AdminLogin from "../Componentrs/Login/Admin/AdminLogin";
 import AdminRegistration from "../Componentrs/Login/Admin/AdminRegistration";
 import AdminOtp from "../Componentrs/Login/Admin/AdminOtp";
 import AddBlog from "../Componentrs/Dashboard/DashboardComponents/Blogs/CreateBlog";
+import KidsPage from "../Pages/KidsPage/KidsPage";
 
 const router = createBrowserRouter([
   {
@@ -64,6 +65,10 @@ const router = createBrowserRouter([
       {
         path: "/about",
         element: <Aboutpage></Aboutpage>,
+      },
+      {
+        path: "/kids-program",
+        element: <KidsPage></KidsPage>,
       },
       {
         path: "/full-stack-development",

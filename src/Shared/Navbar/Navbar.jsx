@@ -92,7 +92,7 @@ const Navbar = () => {
           <Link to="login" className="btn bg-[#395bdf] text-white me-1">
             Login/Signup <i className="fa-solid fa-right-to-bracket"></i>
           </Link>
-          <Link className="btn bg-black text-white">
+          <Link to="/kids-program" className="btn bg-black text-white">
             <i className="fa-solid fa-child"></i> Kids Program
           </Link>
         </div>
