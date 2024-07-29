@@ -1,11 +1,52 @@
 import { decodeToken } from "../../Utility/Token";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 const CourseDetailsModule = () => {
   // Decode token to retrieve user information
   const userInfo = decodeToken();
+  console.log(userInfo);
 
   // Extract role from user information
   const role = userInfo ? userInfo.role : null;
+  const email = userInfo ? userInfo.email : null;
+
+  const [name, setName] = useState("");
+  const [address, setAddress] = useState("");
+  const [useremail, setUserEmail] = useState("");
+  const [phone, setPhone] = useState(false);
+  const [transactionId, setTransactionId] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setMessage("");
+
+    const courseData = {
+      name,
+      useremail,
+      address,
+      phone,
+      transactionId,
+    };
+
+    try {
+      const response = await axios.post(
+        "http://localhost:5000/enrollment",
+        courseData
+      );
+      if (response.status === 201) {
+        alert("Enrollment Successful");
+        // Reset form fields
+      }
+    } catch (error) {
+      setMessage("Failed to add course. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <div className="py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-10">
@@ -78,26 +119,27 @@ const CourseDetailsModule = () => {
                       After Payment Provide the informations Carefully.
                     </p>
                     <div className="modal-action">
-                      <form method="dialog">
+                      <form method="dialog" onSubmit={handleSubmit}>
                         <div>
                           <input
                             type="text"
                             placeholder="Ekramul Haque Anik"
                             className="input input-bordered w-full max-w-lg mb-2"
-                            disabled
+                            defaultValue={email}
                           />
+
                           <input
-                            type="email"
-                            placeholder="anik.haque.cse1@gmail.com"
+                            type="text"
+                            placeholder="Enter Phone Number"
                             className="input input-bordered w-full max-w-lg mb-2"
-                            disabled
                           />
+
                           <input
-                            type="number"
-                            placeholder="+8801540026119"
+                            type="text"
+                            placeholder="Enter Address"
                             className="input input-bordered w-full max-w-lg mb-2"
-                            disabled
                           />
+
                           <input
                             type="text"
                             placeholder="Enter your Transaction Id"
@@ -106,7 +148,7 @@ const CourseDetailsModule = () => {
                           />
                         </div>
                         <button className="btn mr-4 bg-blue-600 text-white">
-                          {role}
+                          Enroll Now
                         </button>
                         {/* if there is a button in form, it will close the modal */}
                       </form>
