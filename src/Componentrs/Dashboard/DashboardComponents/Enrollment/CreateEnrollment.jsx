@@ -22,19 +22,6 @@ const AddEnrollment = () => {
   const userEmail = userInfo ? userInfo.email : "";
   console.log(userEmail);
 
-  useEffect(() => {
-    const fetchCourses = async () => {
-      try {
-        const response = await axios.get("http://localhost:5000/courses");
-        setCourses(response.data.data);
-      } catch (error) {
-        console.error("Failed to fetch courses:", error);
-      }
-    };
-
-    fetchCourses();
-  }, []);
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -46,12 +33,11 @@ const AddEnrollment = () => {
       phone,
       transactionId,
       image,
-      courseID,
     };
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/enrollment",
+        "http://localhost:5000/fullstack",
         enrollmentData
       );
       if (response.status === 201) {
@@ -62,7 +48,6 @@ const AddEnrollment = () => {
         setPhone("");
         setImage("");
         setTransactionId("");
-        setCourseID("");
       }
     } catch (error) {
       setMessage("Failed to add Enrollment. Please try again.");
@@ -96,12 +81,12 @@ const AddEnrollment = () => {
             className="block text-gray-700 text-sm font-bold mb-2"
             htmlFor="title"
           >
-            Your Enail
+            Your Enail (Type {userEmail})
           </label>
           <input
             type="text"
             id="title"
-            value={userEmail}
+            value={email}
             onChange={(e) => setEmail(e.target.value)}
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             required
@@ -157,29 +142,6 @@ const AddEnrollment = () => {
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             required
           />
-        </div>
-
-        <div className="mb-4">
-          <label
-            className="block text-gray-700 text-sm font-bold mb-2"
-            htmlFor="categoryID"
-          >
-            Select Course
-          </label>
-          <select
-            id="categoryID"
-            value={courseID}
-            onChange={(e) => setCourseID(e.target.value)}
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            required
-          >
-            <option value="">Select Category</option>
-            {courses.map((course) => (
-              <option key={course._id} value={course._id}>
-                {course.title}
-              </option>
-            ))}
-          </select>
         </div>
         <button
           type="submit"

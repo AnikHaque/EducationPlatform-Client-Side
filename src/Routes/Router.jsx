@@ -24,6 +24,7 @@ import AdminOtp from "../Componentrs/Login/Admin/AdminOtp";
 import AddBlog from "../Componentrs/Dashboard/DashboardComponents/Blogs/CreateBlog";
 import Kids from "../Componentrs/Kids/Kids";
 import KidsPage from "../Pages/KidsPage/KidsPage";
+import EnrollmentList from "../Componentrs/Dashboard/DashboardComponents/Enrollment/ShowEnrollments";
 
 const router = createBrowserRouter([
   {
@@ -103,6 +104,10 @@ const router = createBrowserRouter([
           {
             path: "/dashboard/courses",
             element: <CourseList></CourseList>,
+          },
+          {
+            path: "/dashboard/show-enrollments",
+            element: <EnrollmentList></EnrollmentList>,
           },
           {
             path: "/dashboard/edit-course/:id",
