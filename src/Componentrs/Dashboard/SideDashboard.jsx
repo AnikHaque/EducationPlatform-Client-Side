@@ -52,6 +52,14 @@ const SideDashboard = () => {
                       Show Enrollments
                     </Link>
                   </li>
+                  <li>
+                    <Link
+                      to="/dashboard/my-enrollment"
+                      className="block rounded-lg px-4 py-2 text-sm font-medium text-white"
+                    >
+                      My Enrollment
+                    </Link>
+                  </li>
                 </ul>
               </details>
             </li>
