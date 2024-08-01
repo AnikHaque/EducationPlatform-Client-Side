@@ -26,6 +26,8 @@ import Kids from "../Componentrs/Kids/Kids";
 import KidsPage from "../Pages/KidsPage/KidsPage";
 import EnrollmentList from "../Componentrs/Dashboard/DashboardComponents/Enrollment/ShowEnrollments";
 import MyEnrollment from "../Componentrs/Dashboard/DashboardComponents/Enrollment/MyEnrollment";
+import AddBlogCategory from "../Componentrs/Dashboard/DashboardComponents/Blogs/CreateBlogCategory";
+import BlogCategoryList from "../Componentrs/Dashboard/DashboardComponents/Blogs/ShowBlogCategory";
 
 const router = createBrowserRouter([
   {
@@ -103,6 +105,14 @@ const router = createBrowserRouter([
             element: <AddCourse></AddCourse>,
           },
           {
+            path: "/dashboard/add-blogcategory",
+            element: <AddBlogCategory></AddBlogCategory>,
+          },
+          {
+            path: "/dashboard/show-blogcategory",
+            element: <BlogCategoryList></BlogCategoryList>,
+          },
+          {
             path: "/dashboard/courses",
             element: <CourseList></CourseList>,
           },
@@ -110,6 +120,7 @@ const router = createBrowserRouter([
             path: "/dashboard/show-enrollments",
             element: <EnrollmentList></EnrollmentList>,
           },
+
           {
             path: "/dashboard/my-enrollment",
             element: <MyEnrollment></MyEnrollment>,

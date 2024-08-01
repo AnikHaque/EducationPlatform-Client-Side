@@ -35,7 +35,7 @@ const MyEnrollment = () => {
   }, [userEmail]);
 
   return (
-    <div className="container mx-auto p-4">
+    <div className="w-full p-4">
       <h1 className="text-2xl font-bold mb-4">My Enrollments</h1>
 
       {error && <div className="text-red-500 mt-4">{error}</div>}
