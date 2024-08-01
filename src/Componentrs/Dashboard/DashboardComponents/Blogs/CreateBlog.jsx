@@ -5,13 +5,29 @@ import axios from "axios";
 const AddBlog = () => {
   const [title, setTitle] = useState("");
   const [shortDes, setShortDes] = useState("");
-  const [authorName, setAuthorName] = useState("");
-  const [category, setCategory] = useState("");
-  const [time, setTime] = useState("");
+  const [authorname, setAuthorName] = useState("");
+  const [authorimage, setAuthorImage] = useState("");
   const [image, setImage] = useState("");
-  const [categories, setCategories] = useState([]);
+  const [time, setTime] = useState("");
+  const [blogcategoryID, setBlogCategoryID] = useState("");
+  const [blogcategories, setBlogCategories] = useState([]);
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
+
+  useEffect(() => {
+    const fetchCategories = async () => {
+      try {
+        const response = await axios.get(
+          "http://localhost:5000/blogcategories"
+        );
+        setBlogCategories(response.data.data);
+      } catch (error) {
+        console.error("Failed to fetch Blog categories:", error);
+      }
+    };
+
+    fetchCategories();
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -21,10 +37,11 @@ const AddBlog = () => {
     const blogData = {
       title,
       shortDes,
-      authorName,
-      category,
-      image,
+      authorname,
+      authorimage,
       time,
+      image,
+      blogcategoryID,
     };
 
     try {
@@ -35,12 +52,13 @@ const AddBlog = () => {
         setTitle("");
         setShortDes("");
         setAuthorName("");
-        setImage("");
-        setCategories("");
+        setAuthorImage("");
         setTime("");
+        setImage("");
+        setBlogCategoryID("");
       }
     } catch (error) {
-      setMessage("Failed to add blog. Please try again.");
+      setMessage("Failed to add Blogs. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -86,13 +104,13 @@ const AddBlog = () => {
             className="block text-gray-700 text-sm font-bold mb-2"
             htmlFor="price"
           >
-            Image
+            Author Name
           </label>
           <input
             type="text"
             id="price"
-            value={image}
-            onChange={(e) => setImage(e.target.value)}
+            value={authorname}
+            onChange={(e) => setAuthorName(e.target.value)}
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             required
           />
@@ -103,13 +121,13 @@ const AddBlog = () => {
             className="block text-gray-700 text-sm font-bold mb-2"
             htmlFor="image"
           >
-            Author Name
+            Image URL
           </label>
           <input
             type="text"
             id="image"
-            value={authorName}
-            onChange={(e) => setAuthorName(e.target.value)}
+            value={image}
+            onChange={(e) => setImage(e.target.value)}
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             required
           />
@@ -119,14 +137,30 @@ const AddBlog = () => {
             className="block text-gray-700 text-sm font-bold mb-2"
             htmlFor="star"
           >
-            Category
+            Author Photo
           </label>
           <input
             type="text"
             step="0.1"
             id="star"
-            value={category}
-            onChange={(e) => setCategory(e.target.value)}
+            value={authorimage}
+            onChange={(e) => setAuthorImage(e.target.value)}
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            required
+          />
+        </div>
+
+        <div className="mb-4">
+          <label
+            className="block text-gray-700 text-sm font-bold mb-2"
+            htmlFor="star"
+          >
+            Set Time
+          </label>
+          <input
+            type="text"
+            value={time}
+            onChange={(e) => setTime(e.target.value)}
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             required
           />
@@ -136,17 +170,22 @@ const AddBlog = () => {
             className="block text-gray-700 text-sm font-bold mb-2"
             htmlFor="categoryID"
           >
-            Tile
+            Blog Category
           </label>
-          <input
-            type="text"
-            step="0.1"
-            id="star"
-            value={time}
-            onChange={(e) => setTime(e.target.value)}
+          <select
+            id="categoryID"
+            value={blogcategoryID}
+            onChange={(e) => setBlogCategoryID(e.target.value)}
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             required
-          />
+          >
+            <option value="">Select Category</option>
+            {blogcategories.map((blog) => (
+              <option key={blog._id} value={blog._id}>
+                {blog.categoryName}
+              </option>
+            ))}
+          </select>
         </div>
         <button
           type="submit"
