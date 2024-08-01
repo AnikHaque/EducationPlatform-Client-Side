@@ -1,7 +1,7 @@
 const MobileApp = () => {
   return (
     <div>
-      <section class="bg-gradient-to-r from-fuchsia-600 to-blue-600 pt-10">
+      <section class="bg-gradient-to-r from-[#08979D] to-[#9AE1E2] pt-10">
         <div class="px-4 mx-auto overflow-hidden  max-w-7xl sm:px-6 lg:px-8">
           <div class="py-10 sm:py-16 l">
             <div class="grid items-center grid-cols-1 gap-y-12 lg:grid-cols-2 lg:gap-x-8 2xl:gap-x-20">

@@ -1,6 +1,6 @@
 const Hero = () => {
   return (
-    <div className="bg-gradient-to-r from-fuchsia-600 to-blue-600">
+    <div className="bg-gradient-to-r from-[#08979D] to-[#9AE1E2]">
       <div className=" py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-32">
         <div className="grid gap-10 lg:grid-cols-2">
           <div
@@ -15,9 +15,9 @@ const Hero = () => {
                 className="max-w-lg text-justify  mb-6 font-sans text-3xl font-bold  text-white sm:text-4xl sm:leading-none lg:text-6xl 
 "
               >
-                Grow <span className="text-gray-300">Your Skills</span>
+                Grow <span className="">Your Skills</span>
                 <br></br>
-                With our <span className="text-gray-300">Training</span>
+                With our <span className="">Training</span>
               </h2>
               <p className="text-base text-white md:text-lg">
                 Choose from 85,000 online video courses additions published

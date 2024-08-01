@@ -1,12 +1,12 @@
 const Career = () => {
   return (
-    <div className="bg-gradient-to-r from-fuchsia-600 to-blue-600">
+    <div className="bg-gradient-to-r from-[#08979D] to-[#9AE1E2]">
       <div className="py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
         <p className="text-center text-2xl text-white font-bold">
           Choose Your Career
         </p>
         <h1 className="text-center text-5xl font-bold text-white">
-          CHOOSE YOUR <span className="text-gray-300 font-bold">CAREER</span>
+          CHOOSE YOUR <span className="font-bold">CAREER</span>
         </h1>
         <div className="grid grid-cols-2 gap-10 mt-14">
           <div

@@ -1,55 +1,53 @@
 import { decodeToken } from "../../Utility/Token";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import axios from "axios";
+import UserEnrollments from "./SingleEnrollment";
+import AddEnrollment from "../Dashboard/DashboardComponents/Enrollment/CreateEnrollment";
 
 const CourseDetailsModule = () => {
   // Decode token to retrieve user information
   const userInfo = decodeToken();
   console.log(userInfo);
 
-  // Extract role from user information
-  const role = userInfo ? userInfo.role : null;
-  const email = userInfo ? userInfo.email : null;
+  // Extract user ID from user information
+  const userId = userInfo ? userInfo.user_id : "";
 
-  const [name, setName] = useState("");
-  const [address, setAddress] = useState("");
-  const [useremail, setUserEmail] = useState("");
-  const [phone, setPhone] = useState(false);
-  const [transactionId, setTransactionId] = useState("");
-  const [loading, setLoading] = useState(false);
-  const [message, setMessage] = useState("");
+  const [formData, setFormData] = useState({
+    transaction_id: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true);
-    setMessage("");
-
-    const courseData = {
-      name,
-      useremail,
-      address,
-      phone,
-      transactionId,
-    };
-
     try {
       const response = await axios.post(
         "http://localhost:5000/enrollment",
-        courseData
+        {
+          ...formData,
+          user: userId, // Include user ID in the payload
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`, // Include token in the request headers
+          },
+        }
       );
-      if (response.status === 201) {
-        alert("Enrollment Successful");
-        // Reset form fields
-      }
+      alert("Enrollment created successfully");
     } catch (error) {
-      setMessage("Failed to add course. Please try again.");
-    } finally {
-      setLoading(false);
+      console.error("Error creating enrollment", error);
+      alert("Failed to create enrollment");
     }
   };
 
   return (
     <div className="py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-10">
+      <UserEnrollments />
       <div className="grid grid-cols-1 lg:grid-cols-2">
         <div>
           <iframe
@@ -58,10 +56,10 @@ const CourseDetailsModule = () => {
             height="400"
             src="https://www.youtube.com/embed/WA2-9i0cxUA?si=2SQ59fNsWv7sY2RC"
             title="YouTube video player"
-            frameborder="0"
+            frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
           ></iframe>
         </div>
 
@@ -119,39 +117,7 @@ const CourseDetailsModule = () => {
                       After Payment Provide the informations Carefully.
                     </p>
                     <div className="modal-action">
-                      <form method="dialog" onSubmit={handleSubmit}>
-                        <div>
-                          <input
-                            type="text"
-                            placeholder="Ekramul Haque Anik"
-                            className="input input-bordered w-full max-w-lg mb-2"
-                            defaultValue={email}
-                          />
-
-                          <input
-                            type="text"
-                            placeholder="Enter Phone Number"
-                            className="input input-bordered w-full max-w-lg mb-2"
-                          />
-
-                          <input
-                            type="text"
-                            placeholder="Enter Address"
-                            className="input input-bordered w-full max-w-lg mb-2"
-                          />
-
-                          <input
-                            type="text"
-                            placeholder="Enter your Transaction Id"
-                            className="input input-bordered w-full max-w-lg mb-2"
-                            required
-                          />
-                        </div>
-                        <button className="btn mr-4 bg-blue-600 text-white">
-                          Enroll Now
-                        </button>
-                        {/* if there is a button in form, it will close the modal */}
-                      </form>
+                      <AddEnrollment></AddEnrollment>
                     </div>
                   </div>
                 </dialog>
