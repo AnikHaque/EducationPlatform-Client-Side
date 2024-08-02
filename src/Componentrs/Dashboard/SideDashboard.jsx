@@ -46,7 +46,7 @@ const SideDashboard = () => {
                 <ul className="mt-2 space-y-1 px-4">
                   <li>
                     <Link
-                      to="/dashboard/show-enrollments"
+                      to="/dashboard/show-users"
                       className="block rounded-lg px-4 py-2 text-sm font-medium text-white"
                     >
                       Show All Users
@@ -160,15 +160,6 @@ const SideDashboard = () => {
                     >
                       Show Courses
                     </Link>
-                  </li>
-
-                  <li>
-                    <a
-                      href="#"
-                      className="block rounded-lg px-4 py-2 text-sm font-medium text-white"
-                    >
-                      Calendar
-                    </a>
                   </li>
                 </ul>
               </details>

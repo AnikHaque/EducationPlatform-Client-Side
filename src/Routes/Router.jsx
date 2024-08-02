@@ -29,6 +29,7 @@ import MyEnrollment from "../Componentrs/Dashboard/DashboardComponents/Enrollmen
 import AddBlogCategory from "../Componentrs/Dashboard/DashboardComponents/Blogs/CreateBlogCategory";
 import BlogCategoryList from "../Componentrs/Dashboard/DashboardComponents/Blogs/ShowBlogCategory";
 import BlogList from "../Componentrs/Dashboard/DashboardComponents/Blogs/ShowBlogs";
+import UserList from "../Componentrs/Dashboard/DashboardComponents/Users/AllUsers";
 
 const router = createBrowserRouter([
   {
@@ -137,6 +138,10 @@ const router = createBrowserRouter([
           {
             path: "/dashboard/show-blogs",
             element: <BlogList></BlogList>,
+          },
+          {
+            path: "/dashboard/show-users",
+            element: <UserList></UserList>,
           },
         ],
       },
