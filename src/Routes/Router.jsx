@@ -28,6 +28,7 @@ import EnrollmentList from "../Componentrs/Dashboard/DashboardComponents/Enrollm
 import MyEnrollment from "../Componentrs/Dashboard/DashboardComponents/Enrollment/MyEnrollment";
 import AddBlogCategory from "../Componentrs/Dashboard/DashboardComponents/Blogs/CreateBlogCategory";
 import BlogCategoryList from "../Componentrs/Dashboard/DashboardComponents/Blogs/ShowBlogCategory";
+import BlogList from "../Componentrs/Dashboard/DashboardComponents/Blogs/ShowBlogs";
 
 const router = createBrowserRouter([
   {
@@ -132,6 +133,10 @@ const router = createBrowserRouter([
           {
             path: "/dashboard/add-blog",
             element: <AddBlog></AddBlog>,
+          },
+          {
+            path: "/dashboard/show-blogs",
+            element: <BlogList></BlogList>,
           },
         ],
       },
