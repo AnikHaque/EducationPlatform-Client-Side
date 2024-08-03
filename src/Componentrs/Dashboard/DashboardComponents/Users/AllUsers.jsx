@@ -57,7 +57,7 @@ const UserList = () => {
 
   return (
     <div className="w-full">
-      <h1>All Blogs</h1>
+      <h1 className="text-2xl">All Blogs</h1>
       <div className="">
         <br />
         <div className="overflow-x-auto">
@@ -83,7 +83,7 @@ const UserList = () => {
                   <td>{user.address}</td>
                   <td>{user._id}</td>
                   <td>
-                    <button className="mr-2 bg-blue-500 text-white pl-4 pr-4 pt-1 pb-1 rounded-md">
+                    <button className="mr-2 bg-gradient-to-r from-[#08979D] to-[#9AE1E2] text-white pl-4 pr-4 pt-1 pb-1 rounded-md">
                       Edit
                     </button>
                     <button className="mr-2 bg-red-500 text-white pl-4 pr-4 pt-1 pb-1 rounded-md">
