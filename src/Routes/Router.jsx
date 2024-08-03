@@ -31,6 +31,7 @@ import BlogCategoryList from "../Componentrs/Dashboard/DashboardComponents/Blogs
 import BlogList from "../Componentrs/Dashboard/DashboardComponents/Blogs/ShowBlogs";
 import UserList from "../Componentrs/Dashboard/DashboardComponents/Users/AllUsers";
 import AddReview from "../Componentrs/Dashboard/DashboardComponents/Review/AddReview";
+import ReviewsList from "../Componentrs/Dashboard/DashboardComponents/Review/ShowReviews";
 
 const router = createBrowserRouter([
   {
@@ -147,6 +148,10 @@ const router = createBrowserRouter([
           {
             path: "/dashboard/add-review",
             element: <AddReview></AddReview>,
+          },
+          {
+            path: "/dashboard/show-reviews",
+            element: <ReviewsList></ReviewsList>,
           },
         ],
       },
