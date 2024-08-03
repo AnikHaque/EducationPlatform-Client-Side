@@ -5,7 +5,7 @@ import EnrollmentModal from "./EnrollmentModal";
 const EnrollmentList = () => {
   const [enrollments, setEnrollments] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [selectedEnrollmewnt, setSelectedEnrollment] = useState(null);
+  const [selectedEnrollment, setSelectedEnrollment] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
@@ -32,22 +32,22 @@ const EnrollmentList = () => {
   // const handleDelete = async (id) => {
   //   try {
   //     await axios.delete(`http://localhost:5000/fullstack/${id}`);
-  //     setCourses(courses.filter((course) => course._id !== id));
+  //     setEnrollments(enrollments.filter((enrollment) => enrollment._id !== id));
   //   } catch (error) {
-  //     console.error("Error deleting course:", error);
+  //     console.error("Error deleting enrollment:", error);
   //   }
   // };
 
   const handleSave = async () => {
     try {
       await axios.put(
-        `http://localhost:5000/fullstack/${selectedEnrollmewnt._id}`,
-        selectedEnrollmewnt
+        `http://localhost:5000/fullstack/${selectedEnrollment._id}`,
+        selectedEnrollment
       );
       setEnrollments(
         enrollments.map((enrollment) =>
-          enrollment._id === selectedEnrollmewnt._id
-            ? selectedEnrollmewnt
+          enrollment._id === selectedEnrollment._id
+            ? selectedEnrollment
             : enrollment
         )
       );
@@ -57,44 +57,13 @@ const EnrollmentList = () => {
     }
   };
 
-  //   const handleEdit = (course) => {
-  //     setSelectedCourse(course);
-  //     setIsModalOpen(true);
-  //   };
-
-  //   const handleDelete = async (id) => {
-  //     try {
-  //       await axios.delete(`http://localhost:5000/courses/${id}`);
-  //       setCourses(courses.filter((course) => course._id !== id));
-  //     } catch (error) {
-  //       console.error("Error deleting course:", error);
-  //     }
-  //   };
-
-  //   const handleSave = async () => {
-  //     try {
-  //       await axios.put(
-  //         `http://localhost:5000/courses/${selectedCourse._id}`,
-  //         selectedCourse
-  //       );
-  //       setCourses(
-  //         courses.map((course) =>
-  //           course._id === selectedCourse._id ? selectedCourse : course
-  //         )
-  //       );
-  //       setIsModalOpen(false);
-  //     } catch (error) {
-  //       console.error("Error updating course:", error);
-  //     }
-  //   };
-
   if (loading) {
     return <div className="text-center text-lg">Loading...</div>;
   }
 
   return (
     <div className="w-full">
-      <h1>All Courses</h1>
+      <h1>All Enrollments</h1>
       <div className="">
         <br />
         <div className="overflow-x-auto">
@@ -117,18 +86,16 @@ const EnrollmentList = () => {
                   <td>{index + 1}</td>
                   <td className="text-center">{enrollment.name}</td>
                   <td className="text-center">{enrollment.email}</td>
-
                   <td className="text-center">{enrollment.phone}</td>
                   <td>
                     <img
                       src={enrollment.image}
                       alt=""
-                      className="profile-img1 max-w-10  rounded-md"
+                      className="profile-img1 max-w-10 rounded-md"
                     />
                   </td>
                   <td className="text-center">{enrollment.transactionId}</td>
                   <td className="text-center">{enrollment.status}</td>
-
                   <td>
                     <button
                       className="mr-2 bg-blue-500 text-white pl-4 pr-4 pt-1 pb-1 rounded-md"
@@ -151,7 +118,7 @@ const EnrollmentList = () => {
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
       >
-        {selectedEnrollmewnt && (
+        {selectedEnrollment && (
           <div>
             <form
               onSubmit={(e) => {
@@ -163,10 +130,10 @@ const EnrollmentList = () => {
                 Name:
                 <input
                   type="text"
-                  value={selectedEnrollmewnt.name}
+                  value={selectedEnrollment.name}
                   onChange={(e) =>
                     setSelectedEnrollment({
-                      ...selectedEnrollmewnt,
+                      ...selectedEnrollment,
                       name: e.target.value,
                     })
                   }
@@ -177,25 +144,24 @@ const EnrollmentList = () => {
                 Email:
                 <input
                   type="text"
-                  value={selectedEnrollmewnt.email}
+                  value={selectedEnrollment.email}
                   onChange={(e) =>
                     setSelectedEnrollment({
-                      ...selectedEnrollmewnt,
+                      ...selectedEnrollment,
                       email: e.target.value,
                     })
                   }
                   className="input input-bordered w-full"
                 />
               </label>
-
               <label>
                 Phone:
                 <input
                   type="text"
-                  value={selectedEnrollmewnt.phone}
+                  value={selectedEnrollment.phone}
                   onChange={(e) =>
                     setSelectedEnrollment({
-                      ...selectedEnrollmewnt,
+                      ...selectedEnrollment,
                       phone: e.target.value,
                     })
                   }
@@ -206,10 +172,10 @@ const EnrollmentList = () => {
                 Image URL:
                 <input
                   type="text"
-                  value={selectedEnrollmewnt.image}
+                  value={selectedEnrollment.image}
                   onChange={(e) =>
                     setSelectedEnrollment({
-                      ...selectedEnrollmewnt,
+                      ...selectedEnrollment,
                       image: e.target.value,
                     })
                   }
@@ -220,25 +186,24 @@ const EnrollmentList = () => {
                 Transaction Id:
                 <input
                   type="text"
-                  value={selectedEnrollmewnt.transactionId}
+                  value={selectedEnrollment.transactionId}
                   onChange={(e) =>
                     setSelectedEnrollment({
-                      ...selectedEnrollmewnt,
+                      ...selectedEnrollment,
                       transactionId: e.target.value,
                     })
                   }
                   className="input input-bordered w-full"
                 />
               </label>
-
               <label>
-                Status:
+                Status ( pending / clear ):
                 <input
                   type="text"
-                  value={selectedEnrollmewnt.status}
+                  value={selectedEnrollment.status}
                   onChange={(e) =>
                     setSelectedEnrollment({
-                      ...selectedEnrollmewnt,
+                      ...selectedEnrollment,
                       status: e.target.value,
                     })
                   }

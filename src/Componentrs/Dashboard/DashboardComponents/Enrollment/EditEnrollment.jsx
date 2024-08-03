@@ -34,7 +34,7 @@ const EditEnrollment = () => {
     e.preventDefault();
     try {
       await axios.put(`http://localhost:5000/fullstack/${id}`, enrollment);
-      history.push("/");
+      navigate("/");
     } catch (error) {
       console.error("Error updating course:", error);
     }
@@ -50,7 +50,7 @@ const EditEnrollment = () => {
 
   return (
     <div>
-      <h1>Edit Enrollment</h1>
+      <h1>Edit Enrollment 1</h1>
       <form onSubmit={handleSubmit}>
         <label>
           Title:
@@ -83,13 +83,13 @@ const EditEnrollment = () => {
           Transaction Id:
           <input
             type="text"
-            name="phone"
+            name="transactionId"
             value={enrollment.transactionId || ""}
             onChange={handleChange}
           />
         </label>
         <label>
-          Status:
+          Status (clear / pending):
           <input
             type="text"
             name="status"
@@ -111,7 +111,7 @@ const EditEnrollment = () => {
           type="submit"
           className="bg-green-500 text-white pl-4 pr-4 pt-1 pb-1 rounded-md"
         >
-          Save
+          Save1
         </button>
         <button
           type="button"
