@@ -32,6 +32,7 @@ import BlogList from "../Componentrs/Dashboard/DashboardComponents/Blogs/ShowBlo
 import UserList from "../Componentrs/Dashboard/DashboardComponents/Users/AllUsers";
 import AddReview from "../Componentrs/Dashboard/DashboardComponents/Review/AddReview";
 import ReviewsList from "../Componentrs/Dashboard/DashboardComponents/Review/ShowReviews";
+import ChangePassword from "../Componentrs/Login/Change-Password/ChangePassword";
 
 const router = createBrowserRouter([
   {
@@ -152,6 +153,10 @@ const router = createBrowserRouter([
           {
             path: "/dashboard/show-reviews",
             element: <ReviewsList></ReviewsList>,
+          },
+          {
+            path: "/dashboard/changePassword",
+            element: <ChangePassword></ChangePassword>,
           },
         ],
       },

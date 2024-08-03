@@ -1,6 +1,23 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import LogoutButton from "../Login/User/UserLogout";
+import axios from "axios";
 
 const SideDashboard = () => {
+  const navigate = useNavigate();
+
+  const handleLogout = async () => {
+    try {
+      await axios.post("http://localhost:5000/logout"); // Adjust the URL to your logout endpoint
+      // Clear the token from local storage or cookies
+      localStorage.removeItem("token"); // or handle cookie clearing as needed
+      // Navigate to the login page or any other route after logout
+      navigate("/login");
+    } catch (error) {
+      console.error("Logout error:", error);
+      // Handle error, maybe show a message to the user
+    }
+  };
+
   return (
     <div>
       <div className="flex h-screen flex-col justify-between border-e bg-black max-w-72">
@@ -446,7 +463,7 @@ const SideDashboard = () => {
 
                   <li>
                     <Link
-                      to="/dashboard/add-blog"
+                      to="/dashboard/changePassword"
                       className="block rounded-lg px-4 py-2 text-sm font-medium text-white"
                     >
                       Change Password
@@ -454,12 +471,12 @@ const SideDashboard = () => {
                   </li>
 
                   <li>
-                    <Link
-                      to="/dashboard/add-blog"
-                      className="block rounded-lg px-4 py-2 text-sm font-medium text-white"
+                    <button
+                      className=" bg-white text-black p-1"
+                      onClick={handleLogout}
                     >
                       Logout
-                    </Link>
+                    </button>
                   </li>
                 </ul>
               </details>
