@@ -4,30 +4,54 @@ import { Link } from "react-router-dom";
 const CourseList = () => {
   const [courses, setCourses] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [selectedCategory, setSelectedCategory] = useState("All");
 
-  // Dummy data
+  const categories = [
+    "All",
+    "Design",
+    "Development",
+    "Business & Marketing",
+    "Data Science",
+  ];
+
   const dummyCourses = [
     {
       id: 1,
       title: "Full Stack Web Development",
       image: "https://innovateintern.com/imageswebp/fswd-banner.webp",
+      category: "Development",
     },
     {
       id: 2,
       title: "React for Beginners",
       image:
         "https://lh7-us.googleusercontent.com/D6BrXu23nOJepuMbM-ZSNza1nfl8qLh1PtaGzyYUebo6llBebhDTSKODso4N6JZsFMXuwxSRga2pIqidn6rPkjHJTNd7opp-5HYY87OOFXqiC0nGCcHHenuytpXoG5u4jHzD4MVPdfgW0QvUijKh5q8",
+      category: "Development",
     },
     {
       id: 3,
       title: "Python Programming",
       image:
         "https://media.licdn.com/dms/image/v2/D5612AQEz9KSuvhncQA/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1704352101828?e=2147483647&v=beta&t=AhAuVx6qViPYYTfzEnK7ANwrvrysKCSLuNLw3qoTaQs",
+      category: "Data Science",
+    },
+    {
+      id: 4,
+      title: "UI/UX Design Essentials",
+      image:
+        "https://www.simplilearn.com/ice9/free_resources_article_thumb/What_is_UI_Design.jpg",
+      category: "Design",
+    },
+    {
+      id: 5,
+      title: "Marketing Fundamentals",
+      image:
+        "https://images.ctfassets.net/pdf29us7flmy/4HPDEGThUQdaZ42PdS77r7/cc8cbcd7494ed1d2eaf6b3db76d40fa7/Marketing.png",
+      category: "Business & Marketing",
     },
   ];
 
   useEffect(() => {
-    // Simulate API delay
     const timer = setTimeout(() => {
       setCourses(dummyCourses);
       setLoading(false);
@@ -35,6 +59,11 @@ const CourseList = () => {
 
     return () => clearTimeout(timer);
   }, []);
+
+  const filteredCourses =
+    selectedCategory === "All"
+      ? courses
+      : courses.filter((course) => course.category === selectedCategory);
 
   if (loading) {
     return <div className="text-center text-lg">Loading...</div>;
@@ -45,8 +74,27 @@ const CourseList = () => {
       <h1 className="max-w-lg mb-14 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none lg:text-5xl">
         Our Featured <span className="text-[#395bdf] font-bold">Courses</span>
       </h1>
+
+      {/* Category Filter */}
+      <div className="flex flex-wrap gap-4 mb-10">
+        {categories.map((cat) => (
+          <button
+            key={cat}
+            onClick={() => setSelectedCategory(cat)}
+            className={`px-4 py-2 rounded-full text-sm font-semibold border ${
+              selectedCategory === cat
+                ? "bg-[#395bdf] text-white"
+                : "bg-white text-gray-700 border-gray-300"
+            }`}
+          >
+            {cat}
+          </button>
+        ))}
+      </div>
+
+      {/* Filtered Course List */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {courses.map((course) => (
+        {filteredCourses.map((course) => (
           <div
             key={course.id}
             data-aos="zoom-in"
@@ -66,7 +114,7 @@ const CourseList = () => {
                 Commodi, culpa.
               </p>
               <div className="card-actions justify-start">
-                <Link to="/full-stack-development">
+                <Link to={`/courses/${course.id}`}>
                   <button className="btn bg-[#9f52f4] hover:bg-black text-white">
                     See More Details{" "}
                     <i className="fa-solid fa-arrow-right-long"></i>
@@ -82,6 +130,10 @@ const CourseList = () => {
           </div>
         ))}
       </div>
+
+      {filteredCourses.length === 0 && (
+        <p className="mt-10 text-gray-500 text-center">No courses found.</p>
+      )}
     </div>
   );
 };
