@@ -85,7 +85,7 @@ const router = createBrowserRouter([
         element: <KidsPage></KidsPage>,
       },
       {
-        path: "/full-stack-development",
+        path: "/courses/:id",
         element: <CourseDetails></CourseDetails>,
       },
       {
