@@ -33,6 +33,7 @@ import UserList from "../Componentrs/Dashboard/DashboardComponents/Users/AllUser
 import AddReview from "../Componentrs/Dashboard/DashboardComponents/Review/AddReview";
 import ReviewsList from "../Componentrs/Dashboard/DashboardComponents/Review/ShowReviews";
 import ChangePassword from "../Componentrs/Login/Change-Password/ChangePassword";
+import AllCoursesPage from "../Componentrs/AllCourses/AllCourses";
 
 const router = createBrowserRouter([
   {
@@ -79,6 +80,10 @@ const router = createBrowserRouter([
       {
         path: "/about",
         element: <Aboutpage></Aboutpage>,
+      },
+      {
+        path: "/courses",
+        element: <AllCoursesPage></AllCoursesPage>,
       },
       {
         path: "/kids-program",
