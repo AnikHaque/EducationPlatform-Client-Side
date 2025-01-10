@@ -34,6 +34,8 @@ import AddReview from "../Componentrs/Dashboard/DashboardComponents/Review/AddRe
 import ReviewsList from "../Componentrs/Dashboard/DashboardComponents/Review/ShowReviews";
 import ChangePassword from "../Componentrs/Login/Change-Password/ChangePassword";
 import AllCoursesPage from "../Componentrs/AllCourses/AllCourses";
+import { CourseProvider } from "../Context/CourseContext";
+import AddCoursePage from "../Componentrs/Courses/AddCourse";
 
 const router = createBrowserRouter([
   {
@@ -84,6 +86,14 @@ const router = createBrowserRouter([
       {
         path: "/courses",
         element: <AllCoursesPage></AllCoursesPage>,
+      },
+      {
+        path: "/addcourse",
+        element: (
+          <CourseProvider>
+            <AddCoursePage></AddCoursePage>
+          </CourseProvider>
+        ),
       },
       {
         path: "/kids-program",
