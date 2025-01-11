@@ -1,123 +1,20 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Reviews from "../Reviews/Reviews";
+import { useCourses } from "../../Context/CourseContext";
 
 const categories = [
   "All Courses",
   "UX/UI Design",
-  "Development",
+  "Web Development",
   "Sales Marketing",
   "Data Science",
   "Life Style",
   "Photography",
 ];
 
-const dummyCourses = [
-  {
-    id: 1,
-    title: "Web Development with PHP & Laravel",
-    image: "https://innovateintern.com/imageswebp/fswd-banner.webp",
-    category: "Development",
-    lessons: 12,
-    enroll: 26,
-    date: "01-01-23",
-    rating: 5.0,
-    reviews: 31,
-    instructor: {
-      name: "Dewey Stephens",
-      avatar: "https://i.pravatar.cc/50?img=1",
-    },
-    price: 49,
-  },
-  {
-    id: 1,
-    title: "Web Development with PHP & Laravel",
-    image: "https://innovateintern.com/imageswebp/fswd-banner.webp",
-    category: "Development",
-    lessons: 12,
-    enroll: 26,
-    date: "01-01-23",
-    rating: 5.0,
-    reviews: 31,
-    instructor: {
-      name: "Dewey Stephens",
-      avatar: "https://i.pravatar.cc/50?img=1",
-    },
-    price: 49,
-  },
-  {
-    id: 1,
-    title: "Web Development with PHP & Laravel",
-    image: "https://innovateintern.com/imageswebp/fswd-banner.webp",
-    category: "Development",
-    lessons: 12,
-    enroll: 26,
-    date: "01-01-23",
-    rating: 5.0,
-    reviews: 31,
-    instructor: {
-      name: "Dewey Stephens",
-      avatar: "https://i.pravatar.cc/50?img=1",
-    },
-    price: 49,
-  },
-  {
-    id: 1,
-    title: "Web Development with PHP & Laravel",
-    image: "https://innovateintern.com/imageswebp/fswd-banner.webp",
-    category: "Development",
-    lessons: 12,
-    enroll: 26,
-    date: "01-01-23",
-    rating: 5.0,
-    reviews: 31,
-    instructor: {
-      name: "Dewey Stephens",
-      avatar: "https://i.pravatar.cc/50?img=1",
-    },
-    price: 49,
-  },
-  {
-    id: 1,
-    title: "Web Development with PHP & Laravel",
-    image: "https://innovateintern.com/imageswebp/fswd-banner.webp",
-    category: "Development",
-    lessons: 12,
-    enroll: 26,
-    date: "01-01-23",
-    rating: 5.0,
-    reviews: 31,
-    instructor: {
-      name: "Dewey Stephens",
-      avatar: "https://i.pravatar.cc/50?img=1",
-    },
-    price: 49,
-  },
-  {
-    id: 1,
-    title: "Web Development with PHP & Laravel",
-    image: "https://innovateintern.com/imageswebp/fswd-banner.webp",
-    category: "Development",
-    lessons: 12,
-    enroll: 26,
-    date: "01-01-23",
-    rating: 5.0,
-    reviews: 31,
-    instructor: {
-      name: "Dewey Stephens",
-      avatar: "https://i.pravatar.cc/50?img=1",
-    },
-    price: 49,
-  },
-  // Add more courses with proper structure for demonstration
-];
-
 const AllCoursesPage = () => {
-  const [courses, setCourses] = useState([]);
+  const { courses } = useCourses();
   const [selectedCategory, setSelectedCategory] = useState("All Courses");
-
-  useEffect(() => {
-    setCourses(dummyCourses);
-  }, []);
 
   const filteredCourses =
     selectedCategory === "All Courses"
@@ -154,51 +51,57 @@ const AllCoursesPage = () => {
 
       {/* Courses Grid */}
       <div className="grid gap-6 px-4 sm:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">
-        {filteredCourses.map((course) => (
-          <div
-            key={course.id}
-            className="bg-white rounded-2xl shadow-md overflow-hidden"
-          >
-            <img
-              src={course.image}
-              alt={course.title}
-              className="w-full h-48 object-cover"
-            />
-            <div className="p-5">
-              <div className="flex items-center text-sm text-yellow-500 mb-2">
-                <span>{course.rating.toFixed(1)}</span>
-                <span className="mx-1">★</span>
-                <span>({course.reviews})</span>
-              </div>
-              <h3 className="text-lg font-semibold mb-2">{course.title}</h3>
-              <p className="text-sm text-gray-500 mb-4">
-                Enroll: {course.enroll} • {course.lessons} Lessons • Start:{" "}
-                {course.date}
-              </p>
-              <div className="flex items-center mb-4">
-                <img
-                  src={course.instructor.avatar}
-                  alt={course.instructor.name}
-                  className="w-8 h-8 rounded-full mr-2"
-                />
-                <span className="text-sm font-medium">
-                  {course.instructor.name}
-                </span>
-              </div>
-              <div className="text-right">
-                <span className="text-lg font-bold text-purple-600">
-                  ${course.price.toFixed(2)}
-                </span>
+        {filteredCourses.length === 0 ? (
+          <p className="text-center col-span-3 text-gray-500">
+            No courses available in this category.
+          </p>
+        ) : (
+          filteredCourses.map((course) => (
+            <div
+              key={course.id}
+              className="bg-white rounded-2xl shadow-md overflow-hidden"
+            >
+              <img
+                src={course.image}
+                alt={course.title}
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-5">
+                <div className="flex items-center text-sm text-yellow-500 mb-2">
+                  <span>{course.rating?.toFixed(1)}</span>
+                  <span className="mx-1">★</span>
+                  <span>({course.reviews})</span>
+                </div>
+                <h3 className="text-lg font-semibold mb-2">{course.title}</h3>
+                <p className="text-sm text-gray-500 mb-4">
+                  Enroll: {course.enroll} • {course.lessons} Lessons • Start:{" "}
+                  {course.date}
+                </p>
+                <div className="flex items-center mb-4">
+                  <img
+                    src={course.instructor?.avatar}
+                    alt={course.instructor?.name}
+                    className="w-8 h-8 rounded-full mr-2"
+                  />
+                  <span className="text-sm font-medium">
+                    {course.instructor?.name}
+                  </span>
+                </div>
+                <div className="text-right">
+                  <span className="text-lg font-bold text-purple-600">
+                    ${parseFloat(course.price).toFixed(2)}
+                  </span>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))
+        )}
       </div>
 
-      {/* Feedback and Footer Placeholder */}
+      {/* Reviews & Footer */}
       <div className="mt-20 bg-purple-100 text-center py-10">
         <h2 className="text-2xl font-bold">Feedback From Students</h2>
-        <Reviews></Reviews>
+        <Reviews />
       </div>
 
       <div className="bg-purple-800 text-white py-12 text-center">

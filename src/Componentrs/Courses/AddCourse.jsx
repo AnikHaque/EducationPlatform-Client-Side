@@ -49,68 +49,68 @@ const AddCoursePage = () => {
           placeholder="Title"
           onChange={handleChange}
           required
-          className="input"
+          className="input w-full px-4 py-2 border border-gray-300 rounded-md"
         />
         <input
           name="image"
           placeholder="Image URL"
           onChange={handleChange}
           required
-          className="input"
+          className="input w-full px-4 py-2 border border-gray-300 rounded-md"
         />
         <input
           name="category"
           placeholder="Category"
           onChange={handleChange}
           required
-          className="input"
+          className="input w-full px-4 py-2 border border-gray-300 rounded-md"
         />
         <input
           name="lessons"
           type="number"
           placeholder="Lessons"
           onChange={handleChange}
-          className="input"
+          className="input w-full px-4 py-2 border border-gray-300 rounded-md"
         />
         <input
           name="enroll"
           type="number"
           placeholder="Enroll Count"
           onChange={handleChange}
-          className="input"
+          className="input w-full px-4 py-2 border border-gray-300 rounded-md"
         />
         <input
           name="date"
           type="text"
           placeholder="Start Date"
           onChange={handleChange}
-          className="input"
+          className="input w-full px-4 py-2 border border-gray-300 rounded-md"
         />
         <input
           name="reviews"
           type="number"
           placeholder="Reviews Count"
           onChange={handleChange}
-          className="input"
+          className="input w-full px-4 py-2 border border-gray-300 rounded-md"
         />
         <input
           name="price"
           type="number"
           placeholder="Price"
           onChange={handleChange}
-          className="input"
+          className="input w-full px-4 py-2 border border-gray-300 rounded-md"
         />
         <input
           name="instructor.name"
           placeholder="Instructor Name"
           onChange={handleChange}
-          className="input"
+          className="input w-full px-4 py-2 border border-gray-300 rounded-md"
         />
         <input
           name="instructor.avatar"
           placeholder="Instructor Avatar URL"
           onChange={handleChange}
-          className="input"
+          className="input w-full px-4 py-2 border border-gray-300 rounded-md"
         />
         <button
           type="submit"
