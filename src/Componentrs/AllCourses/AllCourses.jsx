@@ -5,7 +5,7 @@ import { useCourses } from "../../Context/CourseContext";
 const categories = [
   "All Courses",
   "UX/UI Design",
-  "Web Development",
+  "Development",
   "Sales Marketing",
   "Data Science",
   "Life Style",
