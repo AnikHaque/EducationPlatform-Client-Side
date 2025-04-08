@@ -1,6 +1,6 @@
 const Career = () => {
   return (
-    <div className="bg-gradient-to-r from-[#08979D] to-[#9AE1E2]">
+    <div className="bg-[#0b033c]">
       <div className="py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
         <p className="text-center text-2xl text-white font-bold">
           Choose Your Career
@@ -21,7 +21,7 @@ const Career = () => {
               />
             </figure>
             <div className="card-body">
-              <p className="text-blue-800 font-semibold text-lg">
+              <p className="text-[#395bdf] font-bold text-lg">
                 Build Your Career
               </p>
               <h2 className="card-title">
@@ -29,7 +29,7 @@ const Career = () => {
               </h2>
 
               <div className="card-actions justify-end">
-                <button className="btn btn-primary text-white font-extrabold">
+                <button className="btn bg-[#9f52f4] hover:bg-black text-white">
                   Join Now <i className="fa-solid fa-arrow-right-long"></i>
                 </button>
               </div>
@@ -48,7 +48,7 @@ const Career = () => {
               />
             </figure>
             <div className="card-body">
-              <p className="text-blue-800 font-semibold text-lg">
+              <p className="text-[#395bdf] font-bold text-lg">
                 Start From Today
               </p>
               <h2 className="card-title">
@@ -56,7 +56,7 @@ const Career = () => {
               </h2>
 
               <div className="card-actions justify-end">
-                <button className="btn btn-primary text-white font-extrabold">
+                <button className="btn bg-[#9f52f4] hover:bg-black text-white">
                   Join Now <i className="fa-solid fa-arrow-right-long"></i>
                 </button>
               </div>

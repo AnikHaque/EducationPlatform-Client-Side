@@ -1,26 +1,87 @@
+const teamMembers = [
+  {
+    id: 1,
+    name: "Sarah Ahmed",
+    role: "Lead Developer",
+    image: "https://randomuser.me/api/portraits/women/44.jpg",
+    twitter: "#",
+    linkedin: "#",
+  },
+  {
+    id: 2,
+    name: "Rafiul Islam",
+    role: "UI/UX Designer",
+    image: "https://randomuser.me/api/portraits/men/45.jpg",
+    twitter: "#",
+    linkedin: "#",
+  },
+  {
+    id: 3,
+    name: "Jannatul Mawa",
+    role: "Project Manager",
+    image: "https://randomuser.me/api/portraits/women/47.jpg",
+    twitter: "#",
+    linkedin: "#",
+  },
+  {
+    id: 4,
+    name: "Nahid Hossain",
+    role: "Backend Engineer",
+    image: "https://randomuser.me/api/portraits/men/48.jpg",
+    twitter: "#",
+    linkedin: "#",
+  },
+];
+
 const Teams = () => {
   return (
-    <div>
-      <div
-        data-aos="flip-left"
-        className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20"
-      >
-        <div className="mx-auto mb-10 lg:max-w-xl sm:text-center">
-          <p className="inline-block px-3 py-px mb-4 text-5xl font-bold tracking-wider text-teal-900 uppercase rounded-full bg-teal-accent-400">
-            <span className="text-[#395bdf]">Meet </span>Our Team
-          </p>
-          <p className="text-base text-gray-700 md:text-lg">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
-            laboriosam fuga ea molestiae id quam, facilis in inventore labore
-            animi?
+    <section className="py-20 bg-gray-50">
+      <div className="max-w-screen-xl mx-auto px-4">
+        <div className="mb-12 text-center">
+          <h2 className="text-4xl font-bold text-gray-900">
+            Meet Our <span className="text-[#395bdf]">Team</span>
+          </h2>
+          <p className="mt-4 text-gray-600">
+            Passionate people building amazing things together.
           </p>
         </div>
-        <img
-          className="rounded-xl"
-          src="https://i.ibb.co/qp38X50/a03759c8-5f7a-4b46-afda-c7ca2f5acdb4.jpg"
-        ></img>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+          {teamMembers.map((member) => (
+            <div
+              key={member.id}
+              className="bg-white rounded-xl shadow-lg p-6 text-center hover:shadow-2xl transition"
+            >
+              <img
+                className="w-24 h-24 mx-auto rounded-full mb-4 object-cover"
+                src={member.image}
+                alt={member.name}
+              />
+              <h3 className="text-xl font-semibold text-gray-800">
+                {member.name}
+              </h3>
+              <p className="text-sm text-gray-500 mb-4">{member.role}</p>
+              <div className="flex justify-center space-x-4">
+                <a
+                  href={member.twitter}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i className="fab fa-twitter text-[#1DA1F2] text-xl"></i>
+                </a>
+                <a
+                  href={member.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i className="fab fa-linkedin text-[#0077B5] text-xl"></i>
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 
