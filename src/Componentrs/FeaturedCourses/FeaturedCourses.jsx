@@ -1,24 +1,39 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
 import { Link } from "react-router-dom";
 
 const CourseList = () => {
   const [courses, setCourses] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const fetchCourses = async () => {
-      try {
-        const response = await axios.get("http://localhost:5000/courses");
-        setCourses(response.data.data);
-      } catch (error) {
-        console.error("Error fetching courses:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
+  // Dummy data
+  const dummyCourses = [
+    {
+      id: 1,
+      title: "Full Stack Web Development",
+      image: "https://innovateintern.com/imageswebp/fswd-banner.webp",
+    },
+    {
+      id: 2,
+      title: "React for Beginners",
+      image:
+        "https://lh7-us.googleusercontent.com/D6BrXu23nOJepuMbM-ZSNza1nfl8qLh1PtaGzyYUebo6llBebhDTSKODso4N6JZsFMXuwxSRga2pIqidn6rPkjHJTNd7opp-5HYY87OOFXqiC0nGCcHHenuytpXoG5u4jHzD4MVPdfgW0QvUijKh5q8",
+    },
+    {
+      id: 3,
+      title: "Python Programming",
+      image:
+        "https://media.licdn.com/dms/image/v2/D5612AQEz9KSuvhncQA/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1704352101828?e=2147483647&v=beta&t=AhAuVx6qViPYYTfzEnK7ANwrvrysKCSLuNLw3qoTaQs",
+    },
+  ];
 
-    fetchCourses();
+  useEffect(() => {
+    // Simulate API delay
+    const timer = setTimeout(() => {
+      setCourses(dummyCourses);
+      setLoading(false);
+    }, 1000);
+
+    return () => clearTimeout(timer);
   }, []);
 
   if (loading) {
@@ -30,15 +45,19 @@ const CourseList = () => {
       <h1 className="max-w-lg mb-14 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none lg:text-5xl">
         Our Featured <span className="text-[#395bdf] font-bold">Courses</span>
       </h1>
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {courses.map((course) => (
           <div
             key={course.id}
             data-aos="zoom-in"
-            className="card card-compact bg-base-100 lg:max-w-lg "
+            className="card card-compact bg-base-100 shadow-xl"
           >
             <figure>
-              <img src={course.image} alt="Shoes" />
+              <img
+                className="h-52 w-full"
+                src={course.image}
+                alt={course.title}
+              />
             </figure>
             <div className="card-body">
               <h2 className="card-title">{course.title}</h2>
@@ -48,13 +67,13 @@ const CourseList = () => {
               </p>
               <div className="card-actions justify-start">
                 <Link to="/full-stack-development">
-                  <button className="btn btn-primary text-white">
+                  <button className="btn bg-[#9f52f4] hover:bg-black text-white">
                     See More Details{" "}
                     <i className="fa-solid fa-arrow-right-long"></i>
                   </button>
                 </Link>
 
-                <button className="btn btn-primary text-white">
+                <button className="btn bg-[#395bdf] hover:bg-black text-white">
                   10000 Taka Bdt
                   <i className="fa-solid fa-arrow-right-long"></i>
                 </button>
