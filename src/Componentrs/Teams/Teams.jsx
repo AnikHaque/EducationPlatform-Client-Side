@@ -1,39 +1,3 @@
-const teamMembers = [
-  {
-    id: 1,
-    name: "Sarah Ahmed",
-    role: "Lead Developer",
-    image:
-      "https://scontent.fdac20-1.fna.fbcdn.net/v/t39.30808-6/490453558_2206111499803233_2323887789802980713_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeHwehXMhTYcKl_7Y6j7JZmMlfxEQRkQ922V_ERBGRD3bScutGixZ5Rbh-NlPR9QurLhP1JxGMdrLZuPMsHnMFbk&_nc_ohc=hFLLOUqsUAkQ7kNvwGEyXTR&_nc_oc=Adn-6I3iFz6SvU7owWFF_RDsZ2Mb_J_mzYe_ftSpwbqLrJ2Eai0h4Gqhpc92rcxeFw4&_nc_zt=23&_nc_ht=scontent.fdac20-1.fna&_nc_gid=lJEd_fP52bE1j2PRTD1jwA&oh=00_AfK5k9j2U-gcKvOZHG6ds3nQ5gjKzh9Fh5T9wbvvcKZ3-A&oe=6830322F",
-    twitter: "#",
-    linkedin: "#",
-  },
-  {
-    id: 2,
-    name: "Rafiul Islam",
-    role: "UI/UX Designer",
-    image: "https://randomuser.me/api/portraits/men/45.jpg",
-    twitter: "#",
-    linkedin: "#",
-  },
-  {
-    id: 3,
-    name: "Jannatul Mawa",
-    role: "Project Manager",
-    image: "https://randomuser.me/api/portraits/women/47.jpg",
-    twitter: "#",
-    linkedin: "#",
-  },
-  {
-    id: 4,
-    name: "Nahid Hossain",
-    role: "Backend Engineer",
-    image: "https://randomuser.me/api/portraits/men/48.jpg",
-    twitter: "#",
-    linkedin: "#",
-  },
-];
-
 const Teams = () => {
   return (
     <div>
@@ -50,8 +14,8 @@ const Teams = () => {
           <div>
             <div className="aspect-w-1 aspect-h-1">
               <img
-                className="bg-gray-200"
-                src="https://cdn.rareblocks.xyz/collection/celebration/images/testimonials/3/avatar-1.jpg"
+                className="bg-gray-200 w-42 h-42"
+                src="https://scontent.fdac20-1.fna.fbcdn.net/v/t39.30808-6/490453558_2206111499803233_2323887789802980713_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeHwehXMhTYcKl_7Y6j7JZmMlfxEQRkQ922V_ERBGRD3bScutGixZ5Rbh-NlPR9QurLhP1JxGMdrLZuPMsHnMFbk&_nc_ohc=hFLLOUqsUAkQ7kNvwGEyXTR&_nc_oc=Adn-6I3iFz6SvU7owWFF_RDsZ2Mb_J_mzYe_ftSpwbqLrJ2Eai0h4Gqhpc92rcxeFw4&_nc_zt=23&_nc_ht=scontent.fdac20-1.fna&_nc_gid=lJEd_fP52bE1j2PRTD1jwA&oh=00_AfK5k9j2U-gcKvOZHG6ds3nQ5gjKzh9Fh5T9wbvvcKZ3-A&oe=6830322F"
                 alt=""
               />
             </div>
@@ -60,8 +24,8 @@ const Teams = () => {
           <div>
             <div className="aspect-w-1 aspect-h-1">
               <img
-                className="bg-gray-300"
-                src="https://cdn.rareblocks.xyz/collection/celebration/images/testimonials/3/avatar-2.jpg"
+                className="bg-gray-300 w-42 h-42"
+                src="https://scontent.fdac20-1.fna.fbcdn.net/v/t39.30808-6/487674662_1671115970457810_8776021745814690399_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeEtxQLJrE91jf3N92gjTyUp8XjiYTdS3QnxeOJhN1LdCRV-kt4l_Z88Ah2parugJGzf2VTC0Dx0wqxivXm9gSir&_nc_ohc=TpAq4-MMRX8Q7kNvwGm6CDL&_nc_oc=AdkURXMRmbdDQKfXUP1lU-hu5dmoadjshfbv5NPBT5O6VOpAbazyQ9_Vgc4XjkcKY0k&_nc_zt=23&_nc_ht=scontent.fdac20-1.fna&_nc_gid=Q2Dmj04R3aNEKcKPzQH0tg&oh=00_AfImVej6gr3K_ofUEy9I2hieYhDun3VWre5B4AAm89cDFA&oe=68300997"
                 alt=""
               />
             </div>
@@ -70,8 +34,8 @@ const Teams = () => {
           <div>
             <div className="aspect-w-1 aspect-h-1">
               <img
-                className="bg-gray-200"
-                src="https://cdn.rareblocks.xyz/collection/celebration/images/testimonials/3/avatar-3.jpg"
+                className="bg-gray-200 w-42 h-42"
+                src="https://scontent.fdac20-1.fna.fbcdn.net/v/t39.30808-6/487534803_2122458128195221_8533512687488152776_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeGovEoqYJocxbGyDw1H2pf7iC6nT9kYzbSILqdP2RjNtELkTCuIIci861ezlVsBGoK-sTTxw87KGgyOrjmp17Wb&_nc_ohc=wHMzEz5rEaEQ7kNvwHGApVc&_nc_oc=AdnZDxhxwVpty_zfvSnOaiNBJVgfija69bI-3UtW7ZhOacoFgtVZ4SDVPM2TyOnwvQY&_nc_zt=23&_nc_ht=scontent.fdac20-1.fna&_nc_gid=E_39tpppUtGPL3qIt6Db3g&oh=00_AfIVwskDdbgR9nWFuVGFidfOVPyWhVOb3reAW7u7E9xOkw&oe=683014B4"
                 alt=""
               />
             </div>
@@ -80,8 +44,8 @@ const Teams = () => {
           <div>
             <div className="aspect-w-1 aspect-h-1">
               <img
-                className="bg-gray-300"
-                src="https://cdn.rareblocks.xyz/collection/celebration/images/testimonials/3/avatar-4.jpg"
+                className="bg-gray-300 w-42 h-42"
+                src="https://scontent.fdac20-1.fna.fbcdn.net/v/t39.30808-6/494179324_9999078720149279_5820254854431946342_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeHf9QeNLyp0bRbbczdjMDMYmBMyx187gzSYEzLHXzuDNB-A_Kj0ZTrPMegoJYUmeQdH2DbGYldRb0oIwIo1UQQH&_nc_ohc=glRnXxdA2rIQ7kNvwHSj5ZA&_nc_oc=Adn2NEwICkPm4bGiVmWIhKrsQmZVxQwAGpLMGbqMk77MfmhuzrZR0Zus6WIe6ChJ2N0&_nc_zt=23&_nc_ht=scontent.fdac20-1.fna&_nc_gid=iX8wD6vlHea5s_oM4ZLIhg&oh=00_AfJMlMmNakGxmx5_pvWQ7Ehlr_nS_M8HR_bjMp_47GmhTQ&oe=68301F58"
                 alt=""
               />
             </div>
