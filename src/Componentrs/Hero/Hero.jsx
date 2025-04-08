@@ -26,7 +26,7 @@ const Hero = () => {
             </div>
             <div>
               <div>
-                <button className="btn btn-active bg-[#395bdf] text-white font-extrabold pl-5">
+                <button className="btn btn-active bg-[#9f52f4] text-white font-extrabold pl-5">
                   Explore All Courses{" "}
                   <i className="fa-solid fa-arrow-right-long mt-1 pl-1"></i>
                 </button>
