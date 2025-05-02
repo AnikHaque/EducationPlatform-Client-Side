@@ -1,6 +1,6 @@
 const Hero = () => {
   return (
-    <div className="bg-gradient-to-r from-[#08979D] to-[#9AE1E2]">
+    <div className="bg-[#0b033c]">
       <div className=" py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-32">
         <div className="grid gap-10 lg:grid-cols-2">
           <div
