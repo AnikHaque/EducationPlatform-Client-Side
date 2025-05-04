@@ -89,7 +89,7 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          <Link to="login" className="btn bg-[#395bdf] text-white me-1">
+          <Link to="login" className="btn bg-[#9f52f4] text-white me-1">
             Login/Signup <i className="fa-solid fa-right-to-bracket"></i>
           </Link>
           <Link to="/kids-program" className="btn bg-black text-white">
