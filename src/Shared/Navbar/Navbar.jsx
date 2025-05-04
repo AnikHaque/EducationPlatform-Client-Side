@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <div>
-      <div className="navbar bg-[#ffffff] lg:py-4">
+      <div className="navbar bg-[#0b033c] text-white font-semibold lg:py-4">
         <div className="navbar-start flex justify-center">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -49,7 +49,7 @@ const Navbar = () => {
           <Link className="btn btn-ghost text-xl">
             <img
               className="max-w-32"
-              src="https://www.codeinnovior.com/assets/images/Logo-6-inch%20(1).png"
+              src="https://asset.uibucket.net/html/ilearning/assets/images/icons/logo.svg"
             ></img>
           </Link>
         </div>
