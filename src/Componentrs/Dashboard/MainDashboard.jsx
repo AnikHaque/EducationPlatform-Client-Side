@@ -98,7 +98,7 @@ const MainDashboard = () => {
                     />
                   </svg>
                 </div>
-                <p className="mb-2 font-bold">Cycling Sports</p>
+                <p className="mb-2 font-bold">Cycling Sffports</p>
                 <p className="text-sm leading-5 text-gray-900">
                   A slice of heaven. O for awesome, this chocka full cuzzie is
                   as rip-off as a cracker.
