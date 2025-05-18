@@ -8,7 +8,7 @@ const Hero = () => {
             className="flex flex-col justify-center md:pr-8 xl:pr-0 lg:max-w-lg"
           >
             <div className="">
-              <h1 className="text-white font-bold">ALL THE BEST PLATFORM</h1>
+              <h1 className="text-white font-bold">ALL THE BESTff PLATFORM</h1>
             </div>
             <div className="max-w-xl mb-6">
               <h2
