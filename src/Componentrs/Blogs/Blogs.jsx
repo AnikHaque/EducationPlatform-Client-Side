@@ -31,10 +31,13 @@ const blogs = [
     image:
       "https://blog.openreplay.com/images/react-state-management-with-easy-peasy/images/hero.png",
   },
+  // Add more blogs as needed
 ];
 
 const BlogPage = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
+  const [currentPage, setCurrentPage] = useState(1);
+  const blogsPerPage = 2;
 
   const categories = ["All", ...new Set(blogs.map((b) => b.category))];
 
@@ -42,6 +45,17 @@ const BlogPage = () => {
     selectedCategory === "All"
       ? blogs
       : blogs.filter((b) => b.category === selectedCategory);
+
+  // Pagination logic
+  const totalPages = Math.ceil(filteredBlogs.length / blogsPerPage);
+  const indexOfLastBlog = currentPage * blogsPerPage;
+  const indexOfFirstBlog = indexOfLastBlog - blogsPerPage;
+  const currentBlogs = filteredBlogs.slice(indexOfFirstBlog, indexOfLastBlog);
+
+  const handleCategoryClick = (cat) => {
+    setSelectedCategory(cat);
+    setCurrentPage(1); // reset to page 1 when category changes
+  };
 
   return (
     <div className="py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
@@ -54,7 +68,7 @@ const BlogPage = () => {
         {categories.map((cat) => (
           <button
             key={cat}
-            onClick={() => setSelectedCategory(cat)}
+            onClick={() => handleCategoryClick(cat)}
             className={`px-4 py-2 rounded-full text-sm font-semibold border transition ${
               selectedCategory === cat
                 ? "bg-blue-600 text-white"
@@ -68,7 +82,7 @@ const BlogPage = () => {
 
       {/* Blog Grid */}
       <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-        {filteredBlogs.map((blog) => (
+        {currentBlogs.map((blog) => (
           <div
             key={blog.id}
             className="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
@@ -90,10 +104,32 @@ const BlogPage = () => {
         ))}
       </div>
 
+      {/* No Results */}
       {filteredBlogs.length === 0 && (
         <p className="text-center text-gray-500 mt-10">
           No blog posts found for this category.
         </p>
+      )}
+
+      {/* Pagination */}
+      {filteredBlogs.length > blogsPerPage && (
+        <div className="flex justify-center mt-10 space-x-2">
+          {Array.from({ length: totalPages }, (_, index) => index + 1).map(
+            (page) => (
+              <button
+                key={page}
+                onClick={() => setCurrentPage(page)}
+                className={`px-4 py-2 rounded-full text-sm font-medium border transition ${
+                  page === currentPage
+                    ? "bg-blue-600 text-white"
+                    : "bg-white text-gray-700 border-gray-300"
+                }`}
+              >
+                {page}
+              </button>
+            )
+          )}
+        </div>
       )}
     </div>
   );
