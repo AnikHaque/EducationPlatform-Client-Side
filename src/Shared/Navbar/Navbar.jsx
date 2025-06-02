@@ -81,10 +81,10 @@ const Navbar = () => {
               </details>
             </li>
             <li>
-              <Link>Blog</Link>
+              <Link to="/blogs">Blog</Link>
             </li>
             <li>
-              <Link>Contact</Link>
+              <Link to="/contact">Contact</Link>
             </li>
           </ul>
         </div>
