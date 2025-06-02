@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import LoadingSpinner from "../../Utility/LoadingSpinner";
 
 const AllCourses = () => {
   const [courses, setCourses] = useState([]);
@@ -21,6 +22,7 @@ const AllCourses = () => {
       image: "https://innovateintern.com/imageswebp/fswd-banner.webp",
       category: "Development",
     },
+
     {
       id: 2,
       title: "React for Beginners",
@@ -28,6 +30,7 @@ const AllCourses = () => {
         "https://lh7-us.googleusercontent.com/D6BrXu23nOJepuMbM-ZSNza1nfl8qLh1PtaGzyYUebo6llBebhDTSKODso4N6JZsFMXuwxSRga2pIqidn6rPkjHJTNd7opp-5HYY87OOFXqiC0nGCcHHenuytpXoG5u4jHzD4MVPdfgW0QvUijKh5q8",
       category: "Development",
     },
+
     {
       id: 3,
       title: "Python Programming",
@@ -35,18 +38,19 @@ const AllCourses = () => {
         "https://media.licdn.com/dms/image/v2/D5612AQEz9KSuvhncQA/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1704352101828?e=2147483647&v=beta&t=AhAuVx6qViPYYTfzEnK7ANwrvrysKCSLuNLw3qoTaQs",
       category: "Data Science",
     },
+
     {
       id: 4,
       title: "UI/UX Design Essentials",
       image:
-        "https://www.simplilearn.com/ice9/free_resources_article_thumb/What_is_UI_Design.jpg",
+        "https://amadine.com/assets/img/articles/ux-vs-ui/ux-vs-ui-design@2x.png",
       category: "Design",
     },
+
     {
       id: 5,
       title: "Marketing Fundamentals",
-      image:
-        "https://images.ctfassets.net/pdf29us7flmy/4HPDEGThUQdaZ42PdS77r7/cc8cbcd7494ed1d2eaf6b3db76d40fa7/Marketing.png",
+      image: "https://www.pngmart.com/files/7/Digital-Marketing-PNG-Pic.png",
       category: "Business & Marketing",
     },
   ];
@@ -58,7 +62,7 @@ const AllCourses = () => {
     }, 1000);
 
     return () => clearTimeout(timer);
-  }, []);
+  });
 
   const filteredCourses =
     selectedCategory === "All"
@@ -66,7 +70,11 @@ const AllCourses = () => {
       : courses.filter((course) => course.category === selectedCategory);
 
   if (loading) {
-    return <div className="text-center text-lg">Loading...</div>;
+    return (
+      <div className="text-center text-lg">
+        <LoadingSpinner></LoadingSpinner>
+      </div>
+    );
   }
 
   return (
