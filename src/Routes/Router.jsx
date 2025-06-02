@@ -36,6 +36,7 @@ import ChangePassword from "../Componentrs/Login/Change-Password/ChangePassword"
 import { CourseProvider } from "../Context/CourseContext";
 import AddCoursePage from "../Componentrs/Courses/AddCourse";
 import AllCourses from "../Componentrs/AllCourses/AllCourses";
+import BlogPage from "../Componentrs/Blogs/Blogs";
 
 const router = createBrowserRouter([
   {
@@ -86,6 +87,10 @@ const router = createBrowserRouter([
       {
         path: "/courses",
         element: <AllCourses></AllCourses>,
+      },
+      {
+        path: "/blogs",
+        element: <BlogPage></BlogPage>,
       },
       {
         path: "/addcourse",
