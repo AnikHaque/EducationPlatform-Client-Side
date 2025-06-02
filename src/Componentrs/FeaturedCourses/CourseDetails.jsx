@@ -7,26 +7,39 @@ const dummyCourses = [
     id: 1,
     title: "Full Stack Web Development",
     image: "https://innovateintern.com/imageswebp/fswd-banner.webp",
-    description:
-      "Master front-end and back-end development with hands-on projects.",
     category: "Development",
-    price: 10000,
-    duration: "3 Months",
-    level: "Beginner to Advanced",
   },
+
   {
     id: 2,
     title: "React for Beginners",
     image:
       "https://lh7-us.googleusercontent.com/D6BrXu23nOJepuMbM-ZSNza1nfl8qLh1PtaGzyYUebo6llBebhDTSKODso4N6JZsFMXuwxSRga2pIqidn6rPkjHJTNd7opp-5HYY87OOFXqiC0nGCcHHenuytpXoG5u4jHzD4MVPdfgW0QvUijKh5q8",
-    description:
-      "Get started with React and build your first dynamic web apps.",
     category: "Development",
-    price: 5000,
-    duration: "1 Month",
-    level: "Beginner",
   },
-  // ... Add more
+
+  {
+    id: 3,
+    title: "Python Programming",
+    image:
+      "https://media.licdn.com/dms/image/v2/D5612AQEz9KSuvhncQA/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1704352101828?e=2147483647&v=beta&t=AhAuVx6qViPYYTfzEnK7ANwrvrysKCSLuNLw3qoTaQs",
+    category: "Data Science",
+  },
+
+  {
+    id: 4,
+    title: "UI/UX Design Essentials",
+    image:
+      "https://amadine.com/assets/img/articles/ux-vs-ui/ux-vs-ui-design@2x.png",
+    category: "Design",
+  },
+
+  {
+    id: 5,
+    title: "Marketing Fundamentals",
+    image: "https://www.pngmart.com/files/7/Digital-Marketing-PNG-Pic.png",
+    category: "Business & Marketing",
+  },
 ];
 
 const CourseDetails = () => {

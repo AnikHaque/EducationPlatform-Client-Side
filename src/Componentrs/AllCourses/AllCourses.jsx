@@ -6,6 +6,8 @@ const AllCourses = () => {
   const [courses, setCourses] = useState([]);
   const [loading, setLoading] = useState(true);
   const [selectedCategory, setSelectedCategory] = useState("All");
+  const [currentPage, setCurrentPage] = useState(1);
+  const coursesPerPage = 3;
 
   const categories = [
     "All",
@@ -22,7 +24,6 @@ const AllCourses = () => {
       image: "https://innovateintern.com/imageswebp/fswd-banner.webp",
       category: "Development",
     },
-
     {
       id: 2,
       title: "React for Beginners",
@@ -30,7 +31,6 @@ const AllCourses = () => {
         "https://lh7-us.googleusercontent.com/D6BrXu23nOJepuMbM-ZSNza1nfl8qLh1PtaGzyYUebo6llBebhDTSKODso4N6JZsFMXuwxSRga2pIqidn6rPkjHJTNd7opp-5HYY87OOFXqiC0nGCcHHenuytpXoG5u4jHzD4MVPdfgW0QvUijKh5q8",
       category: "Development",
     },
-
     {
       id: 3,
       title: "Python Programming",
@@ -38,7 +38,6 @@ const AllCourses = () => {
         "https://media.licdn.com/dms/image/v2/D5612AQEz9KSuvhncQA/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1704352101828?e=2147483647&v=beta&t=AhAuVx6qViPYYTfzEnK7ANwrvrysKCSLuNLw3qoTaQs",
       category: "Data Science",
     },
-
     {
       id: 4,
       title: "UI/UX Design Essentials",
@@ -46,7 +45,6 @@ const AllCourses = () => {
         "https://amadine.com/assets/img/articles/ux-vs-ui/ux-vs-ui-design@2x.png",
       category: "Design",
     },
-
     {
       id: 5,
       title: "Marketing Fundamentals",
@@ -60,7 +58,6 @@ const AllCourses = () => {
       setCourses(dummyCourses);
       setLoading(false);
     }, 1000);
-
     return () => clearTimeout(timer);
   });
 
@@ -69,10 +66,24 @@ const AllCourses = () => {
       ? courses
       : courses.filter((course) => course.category === selectedCategory);
 
+  // Pagination logic
+  const indexOfLastCourse = currentPage * coursesPerPage;
+  const indexOfFirstCourse = indexOfLastCourse - coursesPerPage;
+  const paginatedCourses = filteredCourses.slice(
+    indexOfFirstCourse,
+    indexOfLastCourse
+  );
+  const totalPages = Math.ceil(filteredCourses.length / coursesPerPage);
+
+  // Reset to first page when category changes
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [selectedCategory]);
+
   if (loading) {
     return (
       <div className="text-center text-lg">
-        <LoadingSpinner></LoadingSpinner>
+        <LoadingSpinner />
       </div>
     );
   }
@@ -100,9 +111,9 @@ const AllCourses = () => {
         ))}
       </div>
 
-      {/* Filtered Course List */}
+      {/* Course Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {filteredCourses.map((course) => (
+        {paginatedCourses.map((course) => (
           <div
             key={course.id}
             data-aos="zoom-in"
@@ -110,7 +121,7 @@ const AllCourses = () => {
           >
             <figure>
               <img
-                className="h-52 w-full"
+                className="h-52 w-full object-cover"
                 src={course.image}
                 alt={course.title}
               />
@@ -139,8 +150,28 @@ const AllCourses = () => {
         ))}
       </div>
 
+      {/* No Course Message */}
       {filteredCourses.length === 0 && (
         <p className="mt-10 text-gray-500 text-center">No courses found.</p>
+      )}
+
+      {/* Pagination */}
+      {totalPages > 1 && (
+        <div className="flex justify-center mt-10 space-x-2">
+          {Array.from({ length: totalPages }, (_, index) => (
+            <button
+              key={index + 1}
+              onClick={() => setCurrentPage(index + 1)}
+              className={`px-4 py-2 rounded border ${
+                currentPage === index + 1
+                  ? "bg-[#395bdf] text-white"
+                  : "bg-white text-gray-700 border-gray-300"
+              }`}
+            >
+              {index + 1}
+            </button>
+          ))}
+        </div>
       )}
     </div>
   );
