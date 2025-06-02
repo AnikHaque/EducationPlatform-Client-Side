@@ -31,7 +31,6 @@ const blogs = [
     image:
       "https://blog.openreplay.com/images/react-state-management-with-easy-peasy/images/hero.png",
   },
-  // Add more blogs as needed
 ];
 
 const BlogPage = () => {

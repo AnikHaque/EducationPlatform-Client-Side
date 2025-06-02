@@ -37,6 +37,7 @@ import { CourseProvider } from "../Context/CourseContext";
 import AddCoursePage from "../Componentrs/Courses/AddCourse";
 import AllCourses from "../Componentrs/AllCourses/AllCourses";
 import BlogPage from "../Componentrs/Blogs/Blogs";
+import Contact from "../Componentrs/Contact/Contact";
 
 const router = createBrowserRouter([
   {
@@ -83,6 +84,10 @@ const router = createBrowserRouter([
       {
         path: "/about",
         element: <Aboutpage></Aboutpage>,
+      },
+      {
+        path: "/contact",
+        element: <Contact></Contact>,
       },
       {
         path: "/courses",
