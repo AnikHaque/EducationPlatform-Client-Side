@@ -1,129 +1,141 @@
-import { useState } from "react";
-import Reviews from "../Reviews/Reviews";
-import { useCourses } from "../../Context/CourseContext";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
-const categories = [
-  "All Courses",
-  "UX/UI Design",
-  "Development",
-  "Sales Marketing",
-  "Data Science",
-  "Life Style",
-  "Photography",
-];
+const AllCourses = () => {
+  const [courses, setCourses] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [selectedCategory, setSelectedCategory] = useState("All");
 
-const AllCoursesPage = () => {
-  const { courses } = useCourses();
-  const [selectedCategory, setSelectedCategory] = useState("All Courses");
+  const categories = [
+    "All",
+    "Design",
+    "Development",
+    "Business & Marketing",
+    "Data Science",
+  ];
+
+  const dummyCourses = [
+    {
+      id: 1,
+      title: "Full Stack Web Development",
+      image: "https://innovateintern.com/imageswebp/fswd-banner.webp",
+      category: "Development",
+    },
+    {
+      id: 2,
+      title: "React for Beginners",
+      image:
+        "https://lh7-us.googleusercontent.com/D6BrXu23nOJepuMbM-ZSNza1nfl8qLh1PtaGzyYUebo6llBebhDTSKODso4N6JZsFMXuwxSRga2pIqidn6rPkjHJTNd7opp-5HYY87OOFXqiC0nGCcHHenuytpXoG5u4jHzD4MVPdfgW0QvUijKh5q8",
+      category: "Development",
+    },
+    {
+      id: 3,
+      title: "Python Programming",
+      image:
+        "https://media.licdn.com/dms/image/v2/D5612AQEz9KSuvhncQA/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1704352101828?e=2147483647&v=beta&t=AhAuVx6qViPYYTfzEnK7ANwrvrysKCSLuNLw3qoTaQs",
+      category: "Data Science",
+    },
+    {
+      id: 4,
+      title: "UI/UX Design Essentials",
+      image:
+        "https://www.simplilearn.com/ice9/free_resources_article_thumb/What_is_UI_Design.jpg",
+      category: "Design",
+    },
+    {
+      id: 5,
+      title: "Marketing Fundamentals",
+      image:
+        "https://images.ctfassets.net/pdf29us7flmy/4HPDEGThUQdaZ42PdS77r7/cc8cbcd7494ed1d2eaf6b3db76d40fa7/Marketing.png",
+      category: "Business & Marketing",
+    },
+  ];
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setCourses(dummyCourses);
+      setLoading(false);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   const filteredCourses =
-    selectedCategory === "All Courses"
+    selectedCategory === "All"
       ? courses
       : courses.filter((course) => course.category === selectedCategory);
 
+  if (loading) {
+    return <div className="text-center text-lg">Loading...</div>;
+  }
+
   return (
-    <div className="bg-white text-gray-900">
-      {/* Hero Section */}
-      <div className="bg-gradient-to-r from-purple-100 to-pink-100 py-10 px-4 text-center">
-        <h1 className="text-4xl font-bold mb-2">Courses</h1>
-        <p className="text-sm text-gray-600">Home &gt; Courses</p>
+    <div className="py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+      <h1 className="max-w-lg mb-14 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none lg:text-5xl">
+        All <span className="text-[#395bdf] font-bold">Courses</span>
+      </h1>
+
+      {/* Category Filter */}
+      <div className="flex flex-wrap gap-4 mb-10">
+        {categories.map((cat) => (
+          <button
+            key={cat}
+            onClick={() => setSelectedCategory(cat)}
+            className={`px-4 py-2 rounded-full text-sm font-semibold border ${
+              selectedCategory === cat
+                ? "bg-[#395bdf] text-white"
+                : "bg-white text-gray-700 border-gray-300"
+            }`}
+          >
+            {cat}
+          </button>
+        ))}
       </div>
 
-      {/* Categories */}
-      <div className="text-center mt-10">
-        <h2 className="text-3xl font-bold mb-6">Explore Our Courses</h2>
-        <div className="flex flex-wrap justify-center gap-3 mb-10">
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              className={`px-5 py-2 rounded-full border font-semibold text-sm transition-all duration-200 ${
-                selectedCategory === cat
-                  ? "bg-purple-600 text-white"
-                  : "bg-white text-gray-700 border-gray-300 hover:bg-purple-50"
-              }`}
-              onClick={() => setSelectedCategory(cat)}
-            >
-              {cat}
-            </button>
-          ))}
-        </div>
-      </div>
-
-      {/* Courses Grid */}
-      <div className="grid gap-6 px-4 sm:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">
-        {filteredCourses.length === 0 ? (
-          <p className="text-center col-span-3 text-gray-500">
-            No courses available in this category.
-          </p>
-        ) : (
-          filteredCourses.map((course) => (
-            <div
-              key={course.id}
-              className="bg-white rounded-2xl shadow-md overflow-hidden"
-            >
+      {/* Filtered Course List */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {filteredCourses.map((course) => (
+          <div
+            key={course.id}
+            data-aos="zoom-in"
+            className="card card-compact bg-base-100 shadow-xl"
+          >
+            <figure>
               <img
+                className="h-52 w-full"
                 src={course.image}
                 alt={course.title}
-                className="w-full h-48 object-cover"
               />
-              <div className="p-5">
-                <div className="flex items-center text-sm text-yellow-500 mb-2">
-                  <span>{course.rating?.toFixed(1)}</span>
-                  <span className="mx-1">★</span>
-                  <span>({course.reviews})</span>
-                </div>
-                <h3 className="text-lg font-semibold mb-2">{course.title}</h3>
-                <p className="text-sm text-gray-500 mb-4">
-                  Enroll: {course.enroll} • {course.lessons} Lessons • Start:{" "}
-                  {course.date}
-                </p>
-                <div className="flex items-center mb-4">
-                  <img
-                    src={course.instructor?.avatar}
-                    alt={course.instructor?.name}
-                    className="w-8 h-8 rounded-full mr-2"
-                  />
-                  <span className="text-sm font-medium">
-                    {course.instructor?.name}
-                  </span>
-                </div>
-                <div className="text-right">
-                  <span className="text-lg font-bold text-purple-600">
-                    ${parseFloat(course.price).toFixed(2)}
-                  </span>
-                </div>
+            </figure>
+            <div className="card-body">
+              <h2 className="card-title">{course.title}</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Commodi, culpa.
+              </p>
+              <div className="card-actions justify-start">
+                <Link to={`/courses/${course.id}`}>
+                  <button className="btn bg-[#9f52f4] hover:bg-black text-white">
+                    See More Details{" "}
+                    <i className="fa-solid fa-arrow-right-long"></i>
+                  </button>
+                </Link>
+
+                <button className="btn bg-[#395bdf] hover:bg-black text-white">
+                  10000 Taka Bdt
+                  <i className="fa-solid fa-arrow-right-long"></i>
+                </button>
               </div>
             </div>
-          ))
-        )}
+          </div>
+        ))}
       </div>
 
-      {/* Reviews & Footer */}
-      <div className="mt-20 bg-purple-100 text-center py-10">
-        <h2 className="text-2xl font-bold">Feedback From Students</h2>
-        <Reviews />
-      </div>
-
-      <div className="bg-purple-800 text-white py-12 text-center">
-        <h2 className="text-2xl font-semibold mb-4">
-          Subscribe For Get Update
-        </h2>
-        <p className="mb-6">
-          30k+ students daily learn with Edugo. Subscribe for new courses.
-        </p>
-        <div className="flex justify-center gap-2">
-          <input
-            type="email"
-            placeholder="Enter your email"
-            className="px-4 py-2 rounded-l-full text-black"
-          />
-          <button className="px-4 py-2 bg-pink-500 rounded-r-full">
-            Subscribe
-          </button>
-        </div>
-      </div>
+      {filteredCourses.length === 0 && (
+        <p className="mt-10 text-gray-500 text-center">No courses found.</p>
+      )}
     </div>
   );
 };
 
-export default AllCoursesPage;
+export default AllCourses;

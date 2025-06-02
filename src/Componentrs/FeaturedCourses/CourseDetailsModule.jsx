@@ -50,7 +50,17 @@ const CourseDetailsModule = () => {
       <UserEnrollments />
       <div className="grid grid-cols-1 lg:grid-cols-2">
         <div>
-          <img src="https://futurefinders.in/wp-content/uploads/2024/09/Hire-full-stack-developer.jpg"></img>
+          <iframe
+            className="mt-11"
+            width="515"
+            height="400"
+            src="https://www.youtube.com/embed/WA2-9i0cxUA?si=2SQ59fNsWv7sY2RC"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          ></iframe>
         </div>
 
         <div className="mt-14">

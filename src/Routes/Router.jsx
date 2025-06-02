@@ -33,9 +33,9 @@ import UserList from "../Componentrs/Dashboard/DashboardComponents/Users/AllUser
 import AddReview from "../Componentrs/Dashboard/DashboardComponents/Review/AddReview";
 import ReviewsList from "../Componentrs/Dashboard/DashboardComponents/Review/ShowReviews";
 import ChangePassword from "../Componentrs/Login/Change-Password/ChangePassword";
-import AllCoursesPage from "../Componentrs/AllCourses/AllCourses";
 import { CourseProvider } from "../Context/CourseContext";
 import AddCoursePage from "../Componentrs/Courses/AddCourse";
+import AllCourses from "../Componentrs/AllCourses/AllCourses";
 
 const router = createBrowserRouter([
   {
@@ -85,11 +85,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/courses",
-        element: (
-          <CourseProvider>
-            <AllCoursesPage></AllCoursesPage>
-          </CourseProvider>
-        ),
+        element: <AllCourses></AllCourses>,
       },
       {
         path: "/addcourse",
