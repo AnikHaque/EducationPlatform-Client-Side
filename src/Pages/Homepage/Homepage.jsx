@@ -7,7 +7,6 @@ import FeaturedCourses from "../../Componentrs/FeaturedCourses/FeaturedCourses";
 import Hero from "../../Componentrs/Hero/Hero";
 import MobileApp from "../../Componentrs/MobileApp/MobileApp";
 import Reviews from "../../Componentrs/Reviews/Reviews";
-import Teams from "../../Componentrs/Teams/Teams";
 
 const Homepage = () => {
   return (
@@ -17,7 +16,7 @@ const Homepage = () => {
       <Awards></Awards>
       <FeaturedCourses></FeaturedCourses>
       <Career></Career>
-      <Teams></Teams>
+
       <Reviews></Reviews>
       <MobileApp></MobileApp>
       <HomeBlog></HomeBlog>
